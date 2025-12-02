@@ -11,5 +11,9 @@ namespace Expedition0.Tasks
     IMPLY,
     PLUS,
     MINUS,
+    NAND,      // NOT AND
+    NOR,       // NOT OR
+    EQUIV,     // Equivalence (NOT XOR)
+    IMPLY_LUK, // Lukasiewicz implication
     }   
 }
