@@ -1,4 +1,5 @@
 using System;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -10,7 +11,7 @@ namespace Expedition0.Environment
         [SerializeField] private bool useTrigger = true;
         [SerializeField] private bool locked = true;
         [SerializeField] private Animator animator;
-        [SerializeField] private string openParameter = "IsOpen";
+        [SerializeField] private string openPropertyName = "IsOpen";
         [SerializeField] private bool startOpen = false;
         
         // Optional: State events
@@ -19,17 +20,18 @@ namespace Expedition0.Environment
         public UnityEvent onDoorLocked;
         public UnityEvent onDoorUnlocked;
         
-        private bool _isOpen = false;
+        private int _openPropertyHash = -1;
         
         private void Awake()
         {
             if (!animator) animator = GetComponent<Animator>();
             
             // Set initial state
-            _isOpen = startOpen;
+            IsOpen = startOpen;
             if (animator)
             {
-                animator.SetBool(openParameter, startOpen);
+                _openPropertyHash = Animator.StringToHash(openPropertyName);
+                animator.SetBool(_openPropertyHash, startOpen);
             }
         }
 
@@ -60,7 +62,7 @@ namespace Expedition0.Environment
                 return;
             }
             
-            if (_isOpen)
+            if (IsOpen)
             {
                 CloseDoor();
             }
@@ -72,13 +74,13 @@ namespace Expedition0.Environment
         
         public void TryOpenDoor()
         {
-            if (locked || _isOpen) return;
+            if (locked || IsOpen) return;
             OpenDoor();
         }
         
         public void TryCloseDoor()
         {
-            if (locked || !_isOpen) return;
+            if (locked || !IsOpen) return;
             CloseDoor();
         }
         
@@ -107,21 +109,24 @@ namespace Expedition0.Environment
         private void OpenDoor()
         {
             if (!animator) return;
-            
-            animator.SetBool(openParameter, true);
+
+            IsOpen = true;
             onDoorOpened?.Invoke();
         }
         
         private void CloseDoor()
         {
             if (!animator) return;
-            
-            animator.SetBool(openParameter, false);
+
+            IsOpen = false;
             onDoorClosed?.Invoke();
         }
         
-        
-        public bool IsOpen => _isOpen;
+        public bool IsOpen
+        {
+            get => animator.GetBool(_openPropertyHash);
+            set => animator.SetBool(_openPropertyHash, value);
+        }
         public bool IsLocked => locked;
         
         private void OnDrawGizmos()
@@ -133,7 +138,7 @@ namespace Expedition0.Environment
             }
             else
             {
-                Gizmos.color = _isOpen ? Color.green : Color.yellow;
+                Gizmos.color = startOpen ? Color.green : Color.yellow;
                 Gizmos.DrawWireCube(transform.position, Vector3.one * 0.5f);
             }
         }

@@ -9,7 +9,7 @@ namespace Expedition0.Environment
         [SerializeField] protected UnityEvent<IDamageable> onKill;
         [SerializeField] protected UnityEvent<PlayerHealth> onKillPlayer;
         
-        protected void OnTriggerEnter(Collider other)
+        protected new void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
             if (other.TryGetComponent<IDamageable>(out var damageable))
@@ -18,7 +18,7 @@ namespace Expedition0.Environment
             }
         }
 
-        protected void OnCollisionEnter(Collision collision)
+        protected new void OnCollisionEnter(Collision collision)
         {
             base.OnCollisionEnter(collision);
             if (collision.gameObject.TryGetComponent<IDamageable>(out var damageable))

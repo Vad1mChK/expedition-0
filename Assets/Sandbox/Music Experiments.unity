@@ -1207,7 +1207,6 @@ MonoBehaviour:
   mainSrc: {fileID: 1074258127}
   auxSrc: {fileID: 2146453662}
   playOnAwake: 1
-  persistAcrossScenes: 1
   defaultTrack:
     intro: {fileID: 8300000, guid: a0c3388c15674cc43ac88263e1b0ee3a, type: 3}
     loop: {fileID: 8300000, guid: 8d8342e253891e64eb8ef855b5c67a04, type: 3}
@@ -2662,6 +2661,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elevator
       objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
+      propertyPath: sceneToLoad
+      value: Lobby_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
+      propertyPath: elevatorLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244455219121176988, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1066800820, guid: 57071f881314be5489c15f266bcf7e7f, type: 3}
+    - target: {fileID: 3115184823576281970, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1868271830, guid: 57071f881314be5489c15f266bcf7e7f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
