@@ -22,6 +22,15 @@ namespace Expedition0.Tasks
             CollectSlots(root);
         }
 
+        // Конструктор с ручным порядком слотов для специальных случаев
+        public ASTTemplate(ASTNode root, Trit answer, List<ValueSlotNode> valueSlots, List<OperatorSlotNode> operatorSlots)
+        {
+            Root = root;
+            Answer = answer;
+            _valueSlots.AddRange(valueSlots);
+            _operatorSlots.AddRange(operatorSlots);
+        }
+
         // Фабрика простого бинарного шаблона: OP(V, V)
         public static ASTTemplate CreateBinaryTemplate(Operator op, Trit answer)
         {

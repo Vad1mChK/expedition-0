@@ -96,8 +96,19 @@ namespace Expedition0.Tasks
                     return Left.Evaluate().Xor(Right.Evaluate());
                 case Operator.IMPLY:
                     return Left.Evaluate().ImplyKleene(Right.Evaluate());
+                case Operator.NAND:
+                    return Left.Evaluate().Nand(Right.Evaluate());
+                case Operator.NOR:
+                    return Left.Evaluate().Nor(Right.Evaluate());
+                case Operator.EQUIV:
+                    return Left.Evaluate().Equiv(Right.Evaluate());
+                case Operator.IMPLY_LUK:
+                    return Left.Evaluate().ImplyLukasiewicz(Right.Evaluate());
+                case Operator.PLUS:
+                case Operator.MINUS:
+                    throw new InvalidOperationException($"Arithmetic operator {_operator} not supported in logic evaluation");
                 default:
-                    throw new Exception("Invalid operator for template node");
+                    throw new Exception($"Invalid operator for template node: {_operator}");
             }
         }
     }

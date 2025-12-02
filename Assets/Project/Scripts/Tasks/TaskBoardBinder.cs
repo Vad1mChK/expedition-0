@@ -25,6 +25,10 @@ namespace Expedition0.Tasks
         public Sprite orSprite;
         public Sprite xorSprite;
         public Sprite implySprite;
+        public Sprite nandSprite;
+        public Sprite norSprite;
+        public Sprite equivSprite;
+        public Sprite implyLukSprite;
 
         [Header("Answer (right side)")]
         public Image answerImage;
@@ -130,6 +134,13 @@ namespace Expedition0.Tasks
                 case Operator.OR: return orSprite;
                 case Operator.XOR: return xorSprite;
                 case Operator.IMPLY: return implySprite;
+                case Operator.NAND: return nandSprite;
+                case Operator.NOR: return norSprite;
+                case Operator.EQUIV: return equivSprite;
+                case Operator.IMPLY_LUK: return implyLukSprite;
+                case Operator.PLUS:
+                case Operator.MINUS:
+                    return null; // Арифметические операторы не поддерживаются в логических заданиях
                 default: return null;
             }
         }
