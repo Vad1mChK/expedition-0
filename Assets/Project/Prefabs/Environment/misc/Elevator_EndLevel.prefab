@@ -793,6 +793,7 @@ MonoBehaviour:
   lockedConditions: []
   defaultLocked: 0
   delayUntilTransport: 2.5
+  progressBeforeTransport: 0
   leftSpriteRenderer: {fileID: 3115184823576281970}
   rightSpriteRenderer: {fileID: 2244455219121176988}
   unlockedIconMaterial: {fileID: 2100000, guid: 6733c86d9fec5184ab9a09ae1e911b49, type: 2}
