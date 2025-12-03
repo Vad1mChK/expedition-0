@@ -27,7 +27,8 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Levels/Machine Hall.unity
     guid: de4b4dc1e6c1b1a45b727ea25d519ccd
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8b55dc16a340e234c8fb698390cee0bb, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ec9a6814256a2134bb4049df8fe6f0ee, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: b0048dd257370cb49a8cb2141f533fc5, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b1777b0078cc17449befc73dd184f750, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 95aa072a3720ef34e89b038b494bc6ee, type: 2}
   m_UseUCBPForAssetBundles: 0
