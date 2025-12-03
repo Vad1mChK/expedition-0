@@ -31,15 +31,13 @@ namespace Expedition0.Environment.Artifacts
             if (acquired) return;
             acquired = true;
             
-            onAcquire?.Invoke();
             foreach (var meshRenderer in meshRenderers)
             {
                 meshRenderer.enabled = false;
             }
-            
-            
             // Save artifact acquisition
             SaveArtifact();
+            onAcquire?.Invoke();
 
             Instantiate(pickupPrefab, transform.position, transform.rotation);
             

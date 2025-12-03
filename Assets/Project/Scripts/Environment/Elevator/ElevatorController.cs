@@ -53,6 +53,7 @@ namespace Expedition0.Environment.Elevator
         [SerializeField] private List<ProgressBasedConditional<bool>> lockedConditions;
         [SerializeField] private bool defaultLocked = false;
         [SerializeField] private float delayUntilTransport = 2.5f;
+        [SerializeField] private GameProgress progressBeforeTransport;
 
         [Header("Elevator Status Icon")]
         [SerializeField] private SpriteRenderer leftSpriteRenderer;
@@ -119,6 +120,8 @@ namespace Expedition0.Environment.Elevator
                     locked = cond.outcome;
                 }
             }
+            
+            Debug.Log($"Lock state of end-level elevator {gameObject.name} evaluated to {locked}");
 
             SetLocked(locked);
         }
@@ -161,6 +164,7 @@ namespace Expedition0.Environment.Elevator
                 return;
 
             _transportQueued = true;
+            EnsureObjectiveCompleted(progressBeforeTransport);
             CloseDoor();
             StartCoroutine(TransportAfterDelay());
         }
@@ -200,6 +204,11 @@ namespace Expedition0.Environment.Elevator
             var material = _locked ? lockedIconMaterial : unlockedIconMaterial;
             leftSpriteRenderer.material = material;
             rightSpriteRenderer.material = material;
+        }
+
+        private void EnsureObjectiveCompleted(GameProgress progress)
+        {
+            SaveManager.SetCompleted(progress);
         }
 
 #if UNITY_EDITOR

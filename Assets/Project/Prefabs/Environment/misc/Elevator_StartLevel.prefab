@@ -117,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 4784577612070212249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -0.55}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -142,7 +142,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 2, z: 1}
+  m_Size: {x: 1.5, y: 2, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2999001070262770774
 MonoBehaviour:
@@ -723,6 +723,7 @@ MonoBehaviour:
   lockedConditions: []
   defaultLocked: 0
   delayUntilTransport: 2.5
+  progressBeforeTransport: 0
   leftSpriteRenderer: {fileID: 3115184823576281970}
   rightSpriteRenderer: {fileID: 2244455219121176988}
   unlockedIconMaterial: {fileID: 2100000, guid: 6733c86d9fec5184ab9a09ae1e911b49, type: 2}
