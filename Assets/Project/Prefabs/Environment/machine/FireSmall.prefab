@@ -266,7 +266,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -416,6 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8500845237156545919}
   - component: {fileID: 6650351568800036110}
+  - component: {fileID: 648242617119114072}
   m_Layer: 0
   m_Name: FireSmall
   m_TagString: Untagged
@@ -453,7 +454,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -464,6 +465,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.75
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &648242617119114072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7502514337544836305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d8ea737bb746679d24c886f7be3566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Environment.Fire.FireDamage
+  areaDamagePerSecond: 10
+  areaDamageDealInterval: 0.5
 --- !u!1 &7801311361927705277
 GameObject:
   m_ObjectHideFlags: 0

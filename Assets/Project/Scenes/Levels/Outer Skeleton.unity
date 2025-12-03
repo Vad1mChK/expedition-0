@@ -960,6 +960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Health)
       objectReference: {fileID: 0}
+    - target: {fileID: 8039796730547064457, guid: 9902ee83e7fa79445bc4d341202b0af8, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 868499160}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1104,11 +1108,76 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1868271830, guid: 57071f881314be5489c15f266bcf7e7f, type: 3}
+    - target: {fileID: 7037246818166028060, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037246818166028060, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
+--- !u!1001 &819406676
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -48.79377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -53.85616
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 190
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919521516058867100, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: m_Name
+      value: GlobalVolumeWithEffects
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
 --- !u!4 &830219194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1695155416940440199, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
@@ -1125,6 +1194,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7211dc9c28c4741af8bcd61e7cd326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Environment.ElevatorController
+--- !u!114 &868499160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2803782637174750665, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+  m_PrefabInstance: {fileID: 819406676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5f3fefc2b54db19bd247b77d9a4722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Visuals.VisualEffectsController
 --- !u!1001 &949661733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2753,6 +2833,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3473101125571173801, guid: d35746ea4638040498fa56e64f903b99, type: 3}
+      propertyPath: pickupPrefab
+      value: 
+      objectReference: {fileID: 4786917340008106900, guid: 3611d2ef1ffa4fb4e8d3c39f89a68aa8, type: 3}
+    - target: {fileID: 3473101125571173801, guid: d35746ea4638040498fa56e64f903b99, type: 3}
       propertyPath: onAcquire.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -3233,3 +3317,4 @@ SceneRoots:
   - {fileID: 708317846}
   - {fileID: 55452170}
   - {fileID: 788893261}
+  - {fileID: 819406676}

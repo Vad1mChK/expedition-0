@@ -128,16 +128,6 @@ namespace Expedition0.Environment.Fire
                 }
             }
         }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            Debug.Log("Something entered that fire's collider");
-            if (other.CompareTag("Player") && other.TryGetComponent<IDamageable>(out var damageable))
-            {
-                damageable.TakeDamage(damage);
-            }
-        }
-
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {

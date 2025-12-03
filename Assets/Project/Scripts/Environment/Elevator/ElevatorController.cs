@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Expedition0.Save;
+using Expedition0.Visuals;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -54,6 +56,7 @@ namespace Expedition0.Environment.Elevator
         [SerializeField] private bool defaultLocked = false;
         [SerializeField] private float delayUntilTransport = 2.5f;
         [SerializeField] private GameProgress progressBeforeTransport;
+        [SerializeField] private VisualEffectsController vfx;
 
         [Header("Elevator Status Icon")]
         [SerializeField] private SpriteRenderer leftSpriteRenderer;
@@ -169,11 +172,36 @@ namespace Expedition0.Environment.Elevator
             StartCoroutine(TransportAfterDelay());
         }
 
-        private System.Collections.IEnumerator TransportAfterDelay()
+        private IEnumerator TransportAfterDelay()
         {
             yield return new WaitForSeconds(delayUntilTransport);
+            
+            if (vfx) // reference to VisualEffectsController
+                yield return StartCoroutine(Fade01(vfx, 0f, 1f, 1f));
+            
             if (!string.IsNullOrEmpty(sceneToLoad))
                 SceneManager.LoadScene(sceneToLoad);
+            
+            // Wait one frame so XR rig is placed
+            yield return null;
+
+            // Fade in
+            if (vfx)
+                yield return StartCoroutine(Fade01(vfx, 1f, 0f, 1f));
+        }
+        
+        private IEnumerator Fade01(VisualEffectsController vfx, float from, float to, float duration)
+        {
+            float t = 0f;
+            while (t < duration)
+            {
+                t += Time.deltaTime;
+                float k = Mathf.Clamp01(t / duration);
+                float value = Mathf.Lerp(from, to, k);
+                vfx.SetFade01(value);
+                yield return null;
+            }
+            vfx.SetFade01(to);
         }
 
         // ----- Icons & materials -----
