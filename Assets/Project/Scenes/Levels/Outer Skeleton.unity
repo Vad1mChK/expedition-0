@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Audio.MusicChanger
   conditionalTracks:
-  - progressConditions: 2
+  - progressConditions: 10
     priority: 0
     trackAsset: {fileID: 11400000, guid: 67bb9d2b07007a449a1526c8868b7221, type: 2}
   defaultTrack: {fileID: 11400000, guid: d9e5cc6c5bb18964fb5b94bed8321912, type: 2}
@@ -267,55 +267,6 @@ PrefabInstance:
       addedObject: {fileID: 182445085}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b14c3aae282894f934504fcc647c10, type: 3}
---- !u!1 &293176949
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 293176951}
-  - component: {fileID: 293176950}
-  m_Layer: 0
-  m_Name: Global Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &293176950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293176949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: a8781f1790e961e428eedf5eecddbe31, type: 2}
---- !u!4 &293176951
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293176949}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.43559, y: 50.314293, z: 8.866014}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &354492660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1115,6 +1066,10 @@ PrefabInstance:
       value: Elevator_EndLevel
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 868499160}
+    - target: {fileID: 2131406398601666644, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
       propertyPath: sceneToLoad
       value: Lobby_Default
       objectReference: {fileID: 0}
@@ -1215,6 +1170,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2803782637174750665, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 819406677}
     - target: {fileID: 7919521516058867100, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
       propertyPath: m_Name
       value: GlobalVolumeWithEffects
@@ -1224,6 +1183,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+--- !u!114 &819406677 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3061297913705989757, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
+  m_PrefabInstance: {fileID: 819406676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
 --- !u!4 &830219194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1695155416940440199, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
@@ -2980,6 +2950,10 @@ PrefabInstance:
       value: Elevator_StartLevel
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: d596297ae5916ab449f79f98253fde05, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 868499160}
+    - target: {fileID: 2131406398601666644, guid: d596297ae5916ab449f79f98253fde05, type: 3}
       propertyPath: elevatorLevel
       value: 0
       objectReference: {fileID: 0}
@@ -3356,7 +3330,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1842442928}
-  - {fileID: 293176951}
   - {fileID: 58249944}
   - {fileID: 1535268313}
   - {fileID: 591943900}
