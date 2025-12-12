@@ -7936,7 +7936,7 @@ MonoBehaviour:
   masterVolumeParam: MasterVolume
   musicVolumeParam: MusicVolume
   voiceVolumeParam: VoiceVolume
-  sfxVolumeParam: SFXVolume
+  sfxVolumeParam: SfxVolume
   masterVolumeText: {fileID: 1461316443}
   musicVolumeText: {fileID: 2075200518}
   voiceVolumeText: {fileID: 655839172}
