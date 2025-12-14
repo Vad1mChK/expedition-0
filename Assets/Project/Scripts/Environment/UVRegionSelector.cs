@@ -32,8 +32,10 @@ namespace Expedition0.Environment
         {
             if (!meshRenderer) return;
 
-            foreach (var material in meshRenderer.materials)
+            foreach (var material in meshRenderer.sharedMaterials)
             {
+                if (material == null) continue;
+                
                 // For URP/Lit shader, we need to set the tiling and offset on the _BaseMap property
                 // Using Material.SetTextureOffset and SetTextureScale
                 material.SetTextureOffset(BaseMap, offset);
