@@ -125,7 +125,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   meshRenderers: []
-  pickupPrefab: {fileID: 0}
+  pickupPrefab: {fileID: 4786917340008106900, guid: 3611d2ef1ffa4fb4e8d3c39f89a68aa8, type: 3}
   delayUntilDestroy: 5
 --- !u!114 &2042024526018251631
 MonoBehaviour:

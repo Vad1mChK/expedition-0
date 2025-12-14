@@ -99,6 +99,12 @@ MonoBehaviour:
     - type: 1
       content: '"fern grass 02" (https://skfb.ly/oNSsB) by POLYSCAN is licensed under
         Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).'
+    - type: 1
+      content: '"Chinese Lantern" (https://skfb.ly/6Ur8u) by Batuhan13 is licensed
+        under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).'
+    - type: 1
+      content: '"Chinese Lantern" (https://skfb.ly/pto8D) by MiloB is licensed under
+        Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).'
   - pageName: models
     displayDuration: 5
     entries:
@@ -135,7 +141,7 @@ MonoBehaviour:
     displayDuration: 4
     entries:
     - type: 1
-      content: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u0438\u0433\u0440\u0443!"
-    - type: 0
+      content: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043F\u0440\u043E\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u0435!"
+    - type: 1
       content: "2025\nv.0.0.1-PROTO (17 \u0434\u0435\u043A\u0430\u0431\u0440\u044F
         2025)"
