@@ -145,9 +145,6 @@ PlayerSettings:
   bundleVersion: 0.0.1-PROTO
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  - {fileID: 2744688543399129189, guid: b1777b0078cc17449befc73dd184f750, type: 2}
-  - {fileID: 11400000, guid: 8b55dc16a340e234c8fb698390cee0bb, type: 2}
-  - {fileID: -6179419546638923131, guid: 95aa072a3720ef34e89b038b494bc6ee, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1

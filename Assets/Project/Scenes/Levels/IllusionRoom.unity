@@ -422,7 +422,7 @@ PrefabInstance:
       objectReference: {fileID: 1203715143}
     - target: {fileID: 4961894171654746075, guid: 55688878c899dc54385b2093a3afed66, type: 3}
       propertyPath: onKiss.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4961894171654746075, guid: 55688878c899dc54385b2093a3afed66, type: 3}
       propertyPath: onKiss.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -486,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4961894171654746075, guid: 55688878c899dc54385b2093a3afed66, type: 3}
       propertyPath: onKiss.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4961894171654746075, guid: 55688878c899dc54385b2093a3afed66, type: 3}
       propertyPath: onKissWithProgress.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
