@@ -1,3 +1,4 @@
+using Expedition0.Save;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -5,36 +6,38 @@ using UnityEngine.Events;
 namespace Expedition0.CharacterAI
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    [RequireComponent(typeof(Animator))]
     public class IllusionAI : MonoBehaviour
     {
         [Header("References")]
         [Tooltip("The player's head/camera transform.")]
         [SerializeField] private Transform playerHead;
-        
         [Tooltip("The exact point on Illusion where distance is measured (e.g., her eyes/lips).")]
         [SerializeField] private Transform illusionFace;
+        [Tooltip("The animator that controls Illusion's animations")]
+        [SerializeField] private Animator animator;
 
         [Header("Distance Parameters")]
         [Tooltip("r1: Distance to trigger kiss.")]
         [SerializeField] private float kissDistance = 0.5f;     // r1
-        
         [Tooltip("r2: Distance to stop walking and wait.")]
         [SerializeField] private float standByDistance = 1.5f;  // r2
-        
         [Tooltip("r3: Max distance to start tracking/walking.")]
         [SerializeField] private float trackingDistance = 5.0f; // r3
-
+        
         [Header("Angle Parameters")]
         [Tooltip("Alpha: Max angle for both parties to see each other.")]
         [Range(0, 90)]
         [SerializeField] private float fieldOfViewAngle = 45f;
 
-        [Header("Events")] [SerializeField] private UnityEvent onKiss;
+        [Header("Events")]
+        [SerializeField] private UnityEvent onKiss;
 
         [Header("Durations")]
         [SerializeField] private float kissCooldownDuration = 5f;
         [SerializeField] private float kissAnimationDuration = 2f; // Adjust to match Anim clip length
+
+        [Header("Misc")]
+        [SerializeField] private bool doUpdateSaveAfterKiss = true;
 
         // State Machine
         private enum AIState { IdleFar, Approaching, IdleClose, Kissing, Cooldown }
@@ -42,7 +45,6 @@ namespace Expedition0.CharacterAI
 
         // Components
         private NavMeshAgent _agent;
-        private Animator _animator;
         private float _cooldownTimer;
         private bool _isKissing;
 
@@ -61,7 +63,7 @@ namespace Expedition0.CharacterAI
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
-            _animator = GetComponent<Animator>();
+            if (animator == null) animator = GetComponentInChildren<Animator>();
 
             // Validation
             if (illusionFace == null) illusionFace = transform;
@@ -216,13 +218,19 @@ namespace Expedition0.CharacterAI
             currentState = AIState.Kissing;
             _agent.isStopped = true;
             Debug.Log("Attempting kiss");
+
+            if (doUpdateSaveAfterKiss)
+            {
+                SaveManager.SetCompleted(GameProgress.SeenIllusion);
+            }
+            
             onKiss?.Invoke();
             
             // Face exactly
             transform.LookAt(new Vector3(playerHead.position.x, transform.position.y, playerHead.position.z));
 
             // Trigger Animation
-            _animator.SetTrigger(KissTriggerHash);
+            animator.SetTrigger(KissTriggerHash);
             
             // Wait for animation
             yield return new WaitForSeconds(kissAnimationDuration);
@@ -247,7 +255,7 @@ namespace Expedition0.CharacterAI
         {
             // Only walk if moving and not stuck in a special state
             bool moving = !_agent.isStopped && _agent.velocity.sqrMagnitude > 0.1f;
-            _animator.SetBool(IsWalkingHash, moving);
+            animator.SetBool(IsWalkingHash, moving);
         }
 
         // --- Gizmos ---
