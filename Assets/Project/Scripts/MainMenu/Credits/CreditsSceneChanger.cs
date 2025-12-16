@@ -1,12 +1,9 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Expedition0.Save;
 using Expedition0.Visuals;
 using Expedition0.Util;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace Expedition0.MainMenu.Credits
 {
