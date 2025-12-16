@@ -36,8 +36,6 @@ namespace Expedition0.Save
 
         [Header("Outcome")]
         public T outcome;
-        
-        // Public API
 
         public bool SatisfiedForCurrentProgress() =>
             SatisfiedFor(SaveManager.LoadProgress());
@@ -51,8 +49,9 @@ namespace Expedition0.Save
                     return CompareInts(count, intValue, comparison);
 
                 case ProgressBasedConditionalKind.GameProgressMask:
-                    bool hasFlags = (progress & maskValue) == maskValue;
-                    return CompareProgress(progress, maskValue, comparison);
+                    var mask = maskValue & GameProgress.All;
+                    bool hasFlags = (progress & mask) == mask;
+                    return CompareProgress(progress, mask, comparison);
 
                 default:
                     return false;
