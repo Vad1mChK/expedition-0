@@ -27,9 +27,11 @@ namespace Expedition0.Save
         public ProgressBasedConditionalComparison comparison;
 
         [Tooltip("Used if kind == MainLevelCount")]
+        // [ShowIf(nameof(kind), (int)ProgressBasedConditionalKind.MainLevelCount)]
         public int intValue;
 
         [Tooltip("Used if kind == GameProgressMask")]
+        // [ShowIf(nameof(kind), (int)ProgressBasedConditionalKind.GameProgressMask)]
         public GameProgress maskValue;
 
         [Header("Outcome")]
