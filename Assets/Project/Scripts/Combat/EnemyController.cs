@@ -1,14 +1,20 @@
 using Expedition0.Health;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Expedition0.Combat
 {
     public class EnemyController : MonoBehaviour
     {
+        [FormerlySerializedAs("player")]
         [Header("Target Settings")]
-        [SerializeField] private Transform player;
         [Tooltip("Если не указан, будет искать объект с тегом 'Player'")]
+        [SerializeField] private Transform playerLegs;
+        [Tooltip("Обычно это камера игрока")]
+        [SerializeField] private Transform playerHead;
+        
 
         [Header("Movement Settings")]
         [SerializeField] private float moveSpeed = 3f;
@@ -49,17 +55,22 @@ namespace Expedition0.Combat
         void Start()
         {
             // Если игрок не назначен, ищем по тегу
-            if (player == null)
+            if (playerLegs == null)
             {
                 GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
                 if (playerObj != null)
                 {
-                    player = playerObj.transform;
+                    playerLegs = playerObj.transform;
                 }
                 else
                 {
                     Debug.LogError("Player not found! Please assign player or add 'Player' tag");
                 }
+            }
+
+            if (playerHead == null)
+            {
+                playerHead = playerLegs;
             }
 
             // Если точка выстрела не назначена, используем позицию врага
@@ -71,9 +82,11 @@ namespace Expedition0.Combat
 
         void Update()
         {
-            if (player == null) return;
+            if (playerLegs == null || playerHead == null) return;
 
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            Vector3 targetPoint = Vector3.Lerp(playerLegs.position, playerHead.position, Random.value);
+
+            float distanceToPlayer = Vector3.Distance(transform.position, targetPoint);
 
             // Движение к игроку или от него
             MoveTowardsPlayer(distanceToPlayer);
@@ -84,13 +97,13 @@ namespace Expedition0.Combat
             // Стрельба если в зоне атаки
             if (distanceToPlayer <= attackDistance && distanceToPlayer >= minDistance)
             {
-                TryShoot();
+                TryShoot(targetPoint);
             }
         }
 
         private void MoveTowardsPlayer(float distance)
         {
-            Vector3 direction = (player.position - transform.position).normalized;
+            Vector3 direction = (playerLegs.position - transform.position).normalized;
 
             // Если слишком далеко - двигаемся ближе
             if (distance > attackDistance)
@@ -117,7 +130,7 @@ namespace Expedition0.Combat
 
         private void RotateTowardsPlayer()
         {
-            Vector3 directionToPlayer = (player.position - transform.position).normalized;
+            Vector3 directionToPlayer = (playerLegs.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
 
             // Применяем коррекцию угла если нужно
@@ -129,18 +142,18 @@ namespace Expedition0.Combat
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
         }
 
-        private void TryShoot()
+        private void TryShoot(Vector3 targetPoint)
         {
             if (!canShoot) return;
 
             if (Time.time >= lastShootTime + shootCooldown)
             {
-                Shoot();
+                Shoot(targetPoint);
                 lastShootTime = Time.time;
             }
         }
 
-        private void Shoot()
+        private void Shoot(Vector3 targetPoint)
         {
             if (shootPoint == null || beamMaterial == null)
             {
@@ -152,7 +165,7 @@ namespace Expedition0.Combat
             onShoot?.Invoke();
 
             // Вычисляем направление к игроку
-            Vector3 shootDirection = (player.position - shootPoint.position).normalized;
+            Vector3 shootDirection = (targetPoint - shootPoint.position).normalized;
 
             // Создаём луч
             GameObject beam = new GameObject("EnemyBeam");
@@ -174,7 +187,10 @@ namespace Expedition0.Combat
                 endPoint = hit.point;
 
                 // Пытаемся нанести урон через интерфейс
-                IDamageable damageable = hit.collider?.GetComponent<IDamageable>();
+                IDamageable damageable = hit.collider != null
+                    ? hit.collider.GetComponentInParent<IDamageable>()
+                    : null;
+                
                 if (damageable != null)
                 {
                     Debug.Log($"Enemy hit target for {damage} damage");
@@ -206,9 +222,12 @@ namespace Expedition0.Combat
             canShoot = value;
         }
 
-        public void SetPlayer(Transform newPlayer)
+        public void SetPlayer(Transform newPlayerLegs, [CanBeNull] Transform newPlayerHead = null)
         {
-            player = newPlayer;
+            playerLegs = newPlayerLegs;
+            
+            if (newPlayerHead == null) return;
+            playerHead = newPlayerHead;
         }
 
         public void DestroyEnemy()

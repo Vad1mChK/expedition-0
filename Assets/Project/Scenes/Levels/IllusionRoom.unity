@@ -5256,6 +5256,7 @@ GameObject:
   - component: {fileID: 1302475039}
   - component: {fileID: 1302475038}
   - component: {fileID: 1302475040}
+  - component: {fileID: 1302475041}
   m_Layer: 0
   m_Name: Music and Progress Changer
   m_TagString: Untagged
@@ -5307,6 +5308,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Audio.MusicChanger
   conditionalTracks: []
   defaultTrack: {fileID: 11400000, guid: 94b824c78846f3d418f9fcdb5489cea5, type: 2}
+--- !u!114 &1302475041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302475037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244932500bde4f91b796a64ae5eeac6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.MainMenu.Credits.CreditsSceneChanger
+  vfxController: {fileID: 1456042042}
+  fadeInOnStart: 1
+  fadeOutOnEnd: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
+  sceneResolver:
+    conditionalValues: []
+    defaultValue: 
 --- !u!1 &1314721127
 GameObject:
   m_ObjectHideFlags: 0

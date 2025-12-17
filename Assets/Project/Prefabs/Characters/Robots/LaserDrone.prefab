@@ -210,7 +210,7 @@ MonoBehaviour:
   onDestroyed:
     m_PersistentCalls:
       m_Calls: []
-  rotationSpeed: 3
+  rotationSpeed: 2
   forwardOffset: {x: 0, y: 180, z: 0}
 --- !u!114 &6271969571490087610
 MonoBehaviour:
@@ -226,6 +226,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Health.EnemyHealth
   maxHealth: 20
   currentHealth: 0
+  destructionDelay: 0
+  deathEffectPrefab: {fileID: 8846840573967041809, guid: bf2c98ff5a65f8d43a302f3ec5c2f8fe, type: 3}
+  deathEffectTransform: {fileID: 2226166434679458338}
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &2296424617637764833
 SphereCollider:
   m_ObjectHideFlags: 0

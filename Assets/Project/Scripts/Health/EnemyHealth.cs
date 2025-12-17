@@ -1,5 +1,6 @@
 using UnityEngine;
-using System.Collections; // Required for Coroutines
+using System.Collections;
+using UnityEngine.Events; // Required for Coroutines
 
 namespace Expedition0.Health
 {
@@ -16,6 +17,9 @@ namespace Expedition0.Health
         [Tooltip("The particle effect prefab to spawn upon death.")]
         [SerializeField] private GameObject deathEffectPrefab;
         [SerializeField] private Transform deathEffectTransform;
+
+        [Header("Events")] [Tooltip("Called on the enemy's death")]
+        [SerializeField] private UnityEvent onDie;
 
         public bool IsDead() => _isDead;
 
@@ -81,6 +85,8 @@ namespace Expedition0.Health
                 // Ensure the effect cleans itself up after its lifetime
                 // (Though you might need a separate script for effect cleanup if the prefab doesn't auto-destroy)
             }
+            
+            onDie?.Invoke();
 
             // 3. Start coroutine for delayed destruction
             StartCoroutine(DelayedDestruction(destructionDelay));

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Expedition0.Combat
 {
@@ -12,8 +13,10 @@ namespace Expedition0.Combat
         [SerializeField] private int defaultSpawnCount = 1;
         [SerializeField] private float spawnIntervalSeconds = 2f;
 
+        [FormerlySerializedAs("playerTransform")]
         [Header("Settings Assigned On Spawn")]
-        [SerializeField] private Transform playerTransform;
+        [SerializeField] private Transform playerLegsTransform;
+        [SerializeField] private Transform playerHeadTransform;
         
         [Header("Spawn Effects")]
         [SerializeField] private GameObject spawnEffectPrefab;
@@ -46,7 +49,7 @@ namespace Expedition0.Combat
             // Inject dependency to the EnemyController
             if (enemyObj.TryGetComponent(out EnemyController controller))
             {
-                controller.SetPlayer(playerTransform);
+                controller.SetPlayer(playerLegsTransform, playerHeadTransform);
             }
             
             onEnemySpawned?.Invoke();
