@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6135309764197178659}
   - component: {fileID: 3002080402693337577}
   - component: {fileID: 547558788937685060}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 6557414952956175665}
   - component: {fileID: 2885727879035360076}
   - component: {fileID: 2591314922711874131}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8816611158555703343}
   - component: {fileID: 814470933888972841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2261332885699694480}
   - component: {fileID: 8792515828903915551}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 8500845237156545919}
   - component: {fileID: 6650351568800036110}
   - component: {fileID: 648242617119114072}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7458135481143112831}
   - component: {fileID: 7905944269151730184}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

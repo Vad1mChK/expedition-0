@@ -202,31 +202,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.65339553
+      value: 0.7072302
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.6531675
+      value: -0.7069834
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.2706453
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.27055082
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -234,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65152bca8645ce9449e24e3442cf38a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -631,13 +631,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BlasterController
   shootPoint: {fileID: 3301670174245512306}
   beamMaterial: {fileID: 2100000, guid: 81eaf3cdaa837d74b91d050945c175a3, type: 2}
-  beamLength: 10
+  beamLength: 32
   beamWidth: 0.05
   beamDuration: 0.1
   damage: 10
   hitLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 503
   rightHandController: {fileID: 0}
   equippedOffset: {x: 0, y: 0, z: 0}
   equippedRotation: {x: -90, y: 0, z: 0}

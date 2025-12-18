@@ -178,20 +178,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a7b87131f5f1342b55a4a959268432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Combat.EnemyController
-  player: {fileID: 0}
+  playerLegs: {fileID: 0}
+  playerHead: {fileID: 0}
   moveSpeed: 3
   attackDistance: 8
   minDistance: 4
   shootPoint: {fileID: 8143993737783702754}
   beamMaterial: {fileID: 2100000, guid: 4098257d5d4a43e429b98967fead5dd5, type: 2}
-  beamLength: 15
+  beamLength: 32
   beamWidth: 0.05
   beamDuration: 0.1
   damage: 5
   shootCooldown: 1
   hitLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 503
   onShoot:
     m_PersistentCalls:
       m_Calls:
