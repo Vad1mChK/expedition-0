@@ -13,13 +13,14 @@ namespace Expedition0.Health
 
         [Header("Death Settings")]
         [Tooltip("Time in seconds before the GameObject is destroyed after death.")]
-        [SerializeField] private float destructionDelay = 3.0f;
+        [SerializeField] private float destructionDelay = 0f;
         [Tooltip("The particle effect prefab to spawn upon death.")]
         [SerializeField] private GameObject deathEffectPrefab;
         [SerializeField] private Transform deathEffectTransform;
 
         [Header("Events")] [Tooltip("Called on the enemy's death")]
         [SerializeField] private UnityEvent onDie;
+        [SerializeField] private UnityEvent onTakeDamage;
 
         public bool IsDead() => _isDead;
 
@@ -46,6 +47,7 @@ namespace Expedition0.Health
             currentHealth = Mathf.Max(0, currentHealth);
 
             Debug.Log($"Enemy '{gameObject.name}' took {damage} damage. Current HP: {currentHealth}/{maxHealth}");
+            onTakeDamage?.Invoke();
 
             if (currentHealth <= 0)
             {

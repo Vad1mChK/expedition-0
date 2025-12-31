@@ -50,10 +50,10 @@ namespace Expedition0.Environment.Fire
             if (damageable.IsDead()) // Assuming IDamageable has IsDead()
                 return;
 
-            if (other.gameObject != null)
-            {
-                Debug.Log($"FireDamage: {other.gameObject.name} has entered the fire");
-            }
+            // if (other.gameObject != null)
+            // {
+            //     Debug.Log($"FireDamage: {other.gameObject.name} has entered the fire");
+            // }
             
             _targets.Add(damageable);
 
@@ -74,10 +74,10 @@ namespace Expedition0.Environment.Fire
                     return; // No damageable found anywhere in the hierarchy
             }
             
-            if (other.gameObject != null)
-            {
-                Debug.Log($"FireDamage: {other.gameObject.name} has exited the fire");
-            }
+            // if (other.gameObject != null)
+            // {
+            //     Debug.Log($"FireDamage: {other.gameObject.name} has exited the fire");
+            // }
 
             _targets.Remove(damageable);
             // This removal must happen regardless of death, as they left the area.

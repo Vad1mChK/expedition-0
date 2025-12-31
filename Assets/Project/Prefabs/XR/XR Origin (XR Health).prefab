@@ -1965,6 +1965,7 @@ GameObject:
   - component: {fileID: 4239589103423118303}
   - component: {fileID: 2486201950527360869}
   - component: {fileID: 8039796730547064457}
+  - component: {fileID: 1819987425528506261}
   - component: {fileID: 4189053648764262431}
   m_Layer: 2
   m_Name: XR Origin (XR Health)
@@ -2135,6 +2136,22 @@ MonoBehaviour:
   OnRespawn:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1819987425528506261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982546419313949002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 122e8015a4874af7b93a7f0f03f485c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Throwaway.EditorOnlyPrefabSummoner
+  prefabsToSummon:
+  - prefab: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+    summonTransform: {fileID: 1581902598462027850}
+    parent: {fileID: 6982546419313949002}
 --- !u!114 &4189053648764262431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2320,7 +2337,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8813950932047734686}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3cd49dc1a38aff4fa00676ddd64cf4e, type: 3}
   m_Name: 
