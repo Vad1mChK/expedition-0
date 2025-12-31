@@ -20,7 +20,7 @@ namespace Expedition0.Health
 
         [Header("Events")] [Tooltip("Called on the enemy's death")]
         [SerializeField] private UnityEvent onDie;
-        [SerializeField] private UnityEvent onTakeDamage;
+        [SerializeField] private UnityEvent<float> onTakeDamage;
 
         public bool IsDead() => _isDead;
 
@@ -47,7 +47,7 @@ namespace Expedition0.Health
             currentHealth = Mathf.Max(0, currentHealth);
 
             Debug.Log($"Enemy '{gameObject.name}' took {damage} damage. Current HP: {currentHealth}/{maxHealth}");
-            onTakeDamage?.Invoke();
+            onTakeDamage?.Invoke(Mathf.Min(damage, currentHealth));
 
             if (currentHealth <= 0)
             {
