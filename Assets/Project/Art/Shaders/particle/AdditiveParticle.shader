@@ -55,6 +55,7 @@ Shader "Custom/AdditiveParticle"
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
                 col *= i.color;
+                col *= col.a;
                 return col; // The Blend One One tag handles the addition
             }
             ENDCG
