@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9318169a97e54c62a0d65ed633933bb8, type: 3}
+  m_Name: Blaster
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Items.Data.ItemData
+  itemName: Blaster
+  isStackable: 0
+  maxStack: 99
+  isConsumable: 0
+  pickupPrefab: {fileID: 6818915762141378965, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
+  heldPrefab: {fileID: 6818915762141378965, guid: e09117c5ba316844f8470426c7d2820d, type: 3}
+  inventoryPrefab: {fileID: 0}
+  equipSound: {fileID: 0}
+  holsterSound: {fileID: 0}

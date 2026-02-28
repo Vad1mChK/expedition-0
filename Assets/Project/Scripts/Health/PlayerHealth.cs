@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Expedition0.Save;
+using Expedition0.Visuals;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -34,6 +35,8 @@ namespace Expedition0.Health
         [Header("UI Reference")]
         [SerializeField] private HealthBar healthBar; // Ensure you have this script or remove this line if not
 
+        [SerializeField] private VisualEffectsController vfx;
+
         [Header("Events")]
         public UnityEvent<float> OnTakeDamage;
 
@@ -62,7 +65,7 @@ namespace Expedition0.Health
             currentHealth -= damage;
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-            UpdateUI();
+            UpdateVisualization();
             OnTakeDamage?.Invoke(damage);
 
             if (currentHealth <= 0) Die();
@@ -95,12 +98,17 @@ namespace Expedition0.Health
             currentHealth += healAmount;
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-            UpdateUI();
+            UpdateVisualization();
         }
 
-        private void UpdateUI()
+        private void UpdateVisualization()
         {
             if (healthBar != null) healthBar.SetHealth(currentHealth);
+            if (vfx)
+            {
+                float damage01 = 1f - currentHealth / maxHealth;
+                vfx.SetDamage01(damage01);
+            }
         }
 
         private void Die()
@@ -140,7 +148,7 @@ namespace Expedition0.Health
 
             currentHealth = maxHealth;
             isDead = false;
-            UpdateUI();
+            UpdateVisualization();
 
             OnRespawn?.Invoke();
             Debug.Log($"{gameObject.name} Respawned!");

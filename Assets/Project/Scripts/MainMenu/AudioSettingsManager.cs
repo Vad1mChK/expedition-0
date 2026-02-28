@@ -11,7 +11,7 @@ public class AudioSettingsManager : MonoBehaviour
     public string masterVolumeParam = "MasterVolume";
     public string musicVolumeParam = "MusicVolume";
     public string voiceVolumeParam = "VoiceVolume";
-    public string sfxVolumeParam = "SFXVolume";
+    public string sfxVolumeParam = "SfxVolume";
     
     // [Header("Volume Step")]
     // [Range(5, 20)]

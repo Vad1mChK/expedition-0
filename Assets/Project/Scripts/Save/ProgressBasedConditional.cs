@@ -27,15 +27,15 @@ namespace Expedition0.Save
         public ProgressBasedConditionalComparison comparison;
 
         [Tooltip("Used if kind == MainLevelCount")]
+        // [ShowIf(nameof(kind), (int)ProgressBasedConditionalKind.MainLevelCount)]
         public int intValue;
 
         [Tooltip("Used if kind == GameProgressMask")]
+        // [ShowIf(nameof(kind), (int)ProgressBasedConditionalKind.GameProgressMask)]
         public GameProgress maskValue;
 
         [Header("Outcome")]
         public T outcome;
-        
-        // Public API
 
         public bool SatisfiedForCurrentProgress() =>
             SatisfiedFor(SaveManager.LoadProgress());
@@ -49,8 +49,9 @@ namespace Expedition0.Save
                     return CompareInts(count, intValue, comparison);
 
                 case ProgressBasedConditionalKind.GameProgressMask:
-                    bool hasFlags = (progress & maskValue) == maskValue;
-                    return CompareProgress(progress, maskValue, comparison);
+                    var mask = maskValue & GameProgress.All;
+                    bool hasFlags = (progress & mask) == mask;
+                    return CompareProgress(progress, mask, comparison);
 
                 default:
                     return false;
