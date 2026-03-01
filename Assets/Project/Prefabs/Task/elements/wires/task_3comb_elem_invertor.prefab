@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8681878014311935879}
   - component: {fileID: 3880506239621479640}
-  - component: {fileID: 7710865603322282367}
+  - component: {fileID: -5822128611224958120}
   m_Layer: 0
   m_Name: task_3comb_elem_invertor
   m_TagString: Untagged
@@ -62,7 +62,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 3364453970752168243}
   m_Enabled: 1
---- !u!114 &7710865603322282367
+--- !u!114 &-5822128611224958120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,14 +71,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2325258054089915410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942887bc5120b4143aa9d72e2bef9d80, type: 3}
+  m_Script: {fileID: 11500000, guid: 85ead032d1434c69a97c6c48c78b9512, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Util.MaterialAssigner
-  _material: {fileID: 2100000, guid: 76ae5d3f7a0926d4487fb901f48bdd6d, type: 2}
-  _includeInactive: 1
-  _applyToSkinned: 1
-  _slot: -1
-  _useSharedMaterials: 1
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Tasks.Experimental.TernaryWireView
+  renderers:
+  - {fileID: 5397370374747104572}
+  - {fileID: 3364453970752168243}
 --- !u!1 &6982503253758960698
 GameObject:
   m_ObjectHideFlags: 0
