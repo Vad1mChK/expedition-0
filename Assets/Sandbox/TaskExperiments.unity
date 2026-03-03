@@ -140,6 +140,7 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
+  interactable: {fileID: 0}
   usesWires: 1
   connectedWires:
   - {fileID: 938858910}
@@ -923,6 +924,7 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
+  interactable: {fileID: 0}
   leftInputView: {fileID: 1644414728}
   rightInputView: {fileID: 1652107545}
   initialOperator: 2
@@ -1484,7 +1486,15 @@ PrefabInstance:
       value: task_ternary_number_tile (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
       propertyPath: usesWires
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
+      propertyPath: initialValue
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
@@ -1622,6 +1632,10 @@ PrefabInstance:
       value: task_ternary_number_tile (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
       propertyPath: usesWires
       value: 0
       objectReference: {fileID: 0}
@@ -1701,6 +1715,10 @@ PrefabInstance:
     - target: {fileID: 3165507777115334857, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
       propertyPath: m_Name
       value: task_ternary_number_tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
+      propertyPath: locked
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
       propertyPath: usesWires
@@ -2505,6 +2523,10 @@ PrefabInstance:
       value: task_ternary_number_tile (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725511220794024715, guid: eed8ffbc1807cb742b2e81388e02cd70, type: 3}
       propertyPath: usesWires
       value: 0
       objectReference: {fileID: 0}
@@ -2986,6 +3008,7 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
+  interactable: {fileID: 0}
   usesWires: 1
   connectedWires:
   - {fileID: 998378178}
@@ -3343,6 +3366,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1157899376}
     m_Modifications:
+    - target: {fileID: 3902950281227934417, guid: 8736738a6c786c84d8d7fc1114cbbaf3, type: 3}
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3902950281227934417, guid: 8736738a6c786c84d8d7fc1114cbbaf3, type: 3}
       propertyPath: leftInputView
       value: 
@@ -4481,9 +4508,17 @@ PrefabInstance:
       value: task_ternary_unop_tile
       objectReference: {fileID: 0}
     - target: {fileID: 6566925850101705964, guid: c207966d1e7e0f94a812c9eaf49b35cf, type: 3}
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566925850101705964, guid: c207966d1e7e0f94a812c9eaf49b35cf, type: 3}
       propertyPath: inputView
       value: 
       objectReference: {fileID: 2054599748}
+    - target: {fileID: 6566925850101705964, guid: c207966d1e7e0f94a812c9eaf49b35cf, type: 3}
+      propertyPath: interactable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8151662764121756534, guid: c207966d1e7e0f94a812c9eaf49b35cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
@@ -4901,6 +4936,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1157899376}
     m_Modifications:
+    - target: {fileID: 3902950281227934417, guid: 8736738a6c786c84d8d7fc1114cbbaf3, type: 3}
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3902950281227934417, guid: 8736738a6c786c84d8d7fc1114cbbaf3, type: 3}
       propertyPath: leftInputView
       value: 
