@@ -30,7 +30,8 @@ namespace Expedition0.Tasks.Experimental
             {
                 leftInput = leftInputView.Model as NonaryLogicNode,
                 rightInput = rightInputView.Model as NonaryLogicNode,
-                op = initialOperator
+                op = initialOperator,
+                locked = locked
             };
         }
         

@@ -24,7 +24,8 @@ namespace Expedition0.Tasks.Experimental
             Node = new TernaryUnaryOperatorNode
             {
                 input = inputView.Model as TernaryLogicNode,
-                op = initialOperator
+                op = initialOperator,
+                locked = locked
             };
 
             Model = Node;
