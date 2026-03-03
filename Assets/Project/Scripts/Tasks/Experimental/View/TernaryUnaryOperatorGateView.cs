@@ -14,7 +14,9 @@ namespace Expedition0.Tasks.Experimental
         
         private void Awake()
         {
+            if (Model == null) BuildModel();
             _gatePrefabs = initialGatePrefabs.ToDictionary(p => p.op, p => p.prefab);
+            UpdateView();
         }
 
         public override void UpdateView()
