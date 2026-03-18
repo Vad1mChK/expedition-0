@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit.Samples.SpatialKeyboard;
 
 namespace Expedition0.MainMenu.Settings
 {
