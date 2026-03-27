@@ -1,0 +1,57 @@
+{
+  "charactersUnlocked": [
+    "e0:soviet_pilot", "e0:shuttle", "e0:soviet_general", "e0:symmetry", "e0:illusion", "e0:hyperion", "e0_fantomas"
+  ],
+  "musicUnlocked": [
+    "e0:soviet_stars",
+    "e0:sounds_of_the_cosmos",
+    "e0:prelude_of_the_cosmos",
+    "e0:soviet_satellite",
+    "e0:red_pagoda",
+    "e0:dawn_over_shanghai",
+    "e0:cosmic_bamboo",
+    "e0:rhythm_of_bamboo",
+    "e0:waves_of_the_moon",
+    "e0:moonlit_exploration",
+    "e0:shadows_in_the_city",
+    "e0:veil_of_shadows",
+    "e0:empress_of_mirrors",
+    "e0:guzheng_with_qipao",
+    "e0:the_cyclic_processor",
+    "e0:soviet_computer",
+    "e0:soviet_supercomputer",
+    "e0:whispers_in_the_shadows",
+    "e0:soviet_nights",
+    "e0:echoes_of_the_cosmos",
+    "e0:thousand_suns_of_the_cosmos",
+    "e0:flashy_nightscape"
+  ],
+  "itemsUnlocked": [
+    "e0:weapon_blaster_pistol",
+    "e0:weapon_uv_lamp",
+    "e0:weapon_coolant",
+    "e0:weapon_smg",
+    "e0:weapon_laser_cannon",
+    "e0:weapon_dagger",
+    "e0:defense_illusion_memo",
+    "e0:defense_mirror_shard",
+    "e0:defense_mysterious_helmet",
+    "e0:consume_medkit",
+    "e0:consume_ammo",
+    "e0:artifact_disk",
+    "e0:artifact_transcoder",
+    "e0:artifact_crystal",
+    "e0:util_microphone"
+  ],
+  "endingsUnlocked": [
+    "e0:worst",
+    "e0:bad",
+    "e0:average",
+    "e0:good",
+    "e0:very_good",
+    "e0:best_silence",
+    "e0:best_integrate",
+    "e0:best_broadcast",
+    "e0:secret"
+  ]
+}

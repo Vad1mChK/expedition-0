@@ -17,7 +17,7 @@ namespace Expedition0.MainMenu.Settings
 
         private IEnumerator TestConnectionRoutine(string baseUrl)
         {
-            string url = $"{baseUrl}/health";
+            string url = $"{baseUrl}/api/health";
             Debug.Log($"Connecting to address: {url}");
             formController.SetStatusString($"Connecting to {url}", ServerSettingsController.Status.Waiting);
 

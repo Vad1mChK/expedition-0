@@ -1,0 +1,71 @@
+{
+  "leftRoot": {
+    "rootId": 0,
+    "nodes": [
+      {
+        "op": "NonaryPlus",
+        "leftId": 1,
+        "rightId": 4,
+        "id": 0,
+        "type": "NonBin",
+        "locked": false
+      },
+      {
+        "op": "NonaryConcat",
+        "leftId": 2,
+        "rightId": 3,
+        "id": 1,
+        "type": "NonBin",
+        "locked": true
+      },
+      {
+        "val": 1,
+        "id": 2,
+        "type": "NonVal",
+        "locked": false
+      },
+      {
+        "val": 6,
+        "id": 3,
+        "type": "NonVal",
+        "locked": false
+      },
+      {
+        "val": 3,
+        "id": 4,
+        "type": "NonVal",
+        "locked": true
+      }
+    ]
+  },
+  "rightRoot": {
+    "rootId": 0,
+    "nodes": [
+      {
+        "op": "NonaryConcat",
+        "leftId": 1,
+        "rightId": 2,
+        "id": 0,
+        "type": "NonBin",
+        "locked": true
+      },
+      {
+        "val": 2,
+        "id": 1,
+        "type": "NonVal",
+        "locked": false
+      },
+      {
+        "val": 0,
+        "id": 2,
+        "type": "NonVal",
+        "locked": false
+      }
+    ]
+  },
+  "attemptCount": 1,
+  "mistakeCount": 0,
+  "leftInterfaceType": "NonaryEquation",
+  "rightInterfaceType": "NonaryEquation",
+  "balanced": false
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PlaythroughSaveData",
+  "type": "object",
+  "properties": {
+    "inventory": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/inventoryEntry" }
+    },
+    "completedLevels": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "respawnLevel": { "type": "string" },
+    "currentHealth": { "type": "number", "minimum": 0, "maximum": 100 },
+    "deathCount": { "type": "integer", "minimum": 0 },
+    "enemyDefeatedCount": { "type": "integer", "minimum": 0 },
+    "taskSolvedCount": { "type": "integer", "minimum": 0 },
+    "taskMistakeCount": { "type": "integer", "minimum": 0 },
+    "artifactCount": { "type": "integer", "minimum": 0 }
+  },
+  "required": ["inventory", "respawnLevel", "currentHealth"],
+
+  "$defs": {
+    "inventoryEntry": {
+      "type": "object",
+      "properties": {
+        "itemId": { "type": "string" },
+        "quantity": { "type": "integer", "minimum": 0 },
+        "metadata": { "type": "string" }
+      },
+      "required": ["itemId", "quantity"]
+    }
+  }
+}

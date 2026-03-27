@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Expedition0.Util
@@ -35,6 +37,61 @@ namespace Expedition0.Util
             }
             
             return r * std + mean;
+        }
+
+        public static T? Choice<T>(IEnumerable<T> choices)
+        {
+            var choicesList = choices.ToList();
+
+            if (choicesList.Count == 0)
+            {
+                return default;
+            }
+
+            int roll = Random.Range(0, choicesList.Count);
+
+            return choicesList[roll];
+        }
+        
+        /// <summary>
+        /// Selects an item based on weighted probability.
+        /// </summary>
+        /// <typeparam name="T">The type of items to choose from.</typeparam>
+        /// <param name="choices">The collection of possible items.</param>
+        /// <param name="weights">The corresponding weights for each item.</param>
+        /// <returns>A chosen item of type T, or null/default if no choice could be made.</returns>
+        public static T? WeightedChoice<T>(IEnumerable<T> choices, IEnumerable<int> weights)
+        {
+            // Use a list to avoid multiple enumerations of the IEnumerable
+            var choicesList = choices.ToList();
+            var weightsList = weights.ToList();
+
+            if (choicesList.Count == 0 || choicesList.Count != weightsList.Count)
+            {
+                return default; 
+            }
+
+            var cumulativeWeight = new List<int>();
+            int totalWeight = 0;
+
+            foreach (int w in weightsList)
+            {
+                totalWeight += w;
+                cumulativeWeight.Add(totalWeight);
+            }
+
+            // UnityEngine.Random.Range(int, int) is max-exclusive for integers
+            int roll = Random.Range(0, totalWeight);
+
+            for (int i = 0; i < choicesList.Count; i++)
+            {
+                if (roll < cumulativeWeight[i])
+                {
+                    return choicesList[i];
+                }
+            }
+
+            return default;
         }
     }
 }

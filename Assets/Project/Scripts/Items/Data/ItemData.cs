@@ -6,10 +6,10 @@ namespace Expedition0.Items.Data
     [CreateAssetMenu(fileName = "New Item", menuName = "Expedition0/Item Data")]
     public class ItemData : ScriptableObject
     {
-        [Header("Main Data")]
+        [Header("Main Data")] 
+        public string itemId = "e0:unknown_item";
         public string itemName;
         public bool isStackable;
-        [ShowIf(nameof(isStackable))] [Range(1, 99)] public int maxStack = 99;
         public bool isConsumable;
         [Header("Prefabs")]
         public GameObject pickupPrefab;

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9318169a97e54c62a0d65ed633933bb8, type: 3}
+  m_Name: Microphone
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Items.Data.ItemData
+  itemId: e0:util_microphone
+  itemName: Microphone
+  isStackable: 0
+  isConsumable: 0
+  pickupPrefab: {fileID: 448561883877099738, guid: 3a86e1ac482400741b7cbbbbe1334923, type: 3}
+  heldPrefab: {fileID: 1392446083916913919, guid: fd87108344f84e04ba7a10ee42cddb82, type: 3}
+  inventoryPrefab: {fileID: 1392446083916913919, guid: 1a39c24024540c44b8c41bd152773774, type: 3}
+  equipSound: {fileID: 0}
+  holsterSound: {fileID: 0}

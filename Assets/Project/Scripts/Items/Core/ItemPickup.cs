@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Expedition0.Items.Data;
@@ -10,7 +11,6 @@ namespace Expedition0.Items.Core
     public class ItemPickup : MonoBehaviour
     {
         [SerializeField] private ItemData data;
-        
         [SerializeField] private XRGrabInteractable _interactable;
         [SerializeField] private Outline _outline;
 
@@ -27,15 +27,18 @@ namespace Expedition0.Items.Core
             _interactable.lastHoverExited.AddListener(_ => { if(_outline) _outline.enabled = false; });
         }
 
-        private void OnPickedUp(SelectEnterEventArgs args)
+        protected virtual void OnPickedUp(SelectEnterEventArgs args)
         {
-            // Find manager in scene (or use a Singleton/Service Locator)
-            var manager = FindFirstObjectByType<InventoryManager>();
-            if (manager)
-            {
-                manager.AddItem(data);
-                Destroy(gameObject);
-            }
+            var manager = InventoryManager.Instance != null
+                ? InventoryManager.Instance
+                : FindFirstObjectByType<InventoryManager>();
+
+            if (manager == null || data == null) return;
+
+            if (!manager.TryAdd(data))
+                return;
+
+            Destroy(gameObject);
         }
     }
 }

@@ -1,0 +1,21 @@
+{
+  "$schema": "./PlaythroughSaveData.schema.json",
+  "inventory": [
+    {
+      "itemId": "e0:weapon_blaster_pistol",
+      "quantity": 1
+    },
+    {
+      "itemId": "e0:util_microphone",
+      "quantity": 1
+    }
+  ],
+  "completedLevels": [],
+  "respawnLevel": "e0:bridge_corridor",
+  "currentHealth": 100,
+  "deathCount": 0,
+  "enemyDefeatedCount": 0,
+  "taskSolvedCount": 0,
+  "taskMistakeCount": 0,
+  "artifactCount": 0
+}

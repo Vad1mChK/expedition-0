@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9318169a97e54c62a0d65ed633933bb8, type: 3}
+  m_Name: ArtifactRetranslator
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Items.Data.ItemData
+  itemId: e0:artifact_transcoder
+  itemName: Binary-Ternary Transcoder
+  isStackable: 0
+  isConsumable: 0
+  pickupPrefab: {fileID: 4421195437819129980, guid: b804903e77740e2459ad2dcbc9ec8b2d, type: 3}
+  heldPrefab: {fileID: 7946706947590920681, guid: 11807943a1d60bc41bee553f70ee8e0d, type: 3}
+  inventoryPrefab: {fileID: 4203986876159873526, guid: ec9e700ea47ee2149a6dba5c87e5a4c9, type: 3}
+  equipSound: {fileID: 0}
+  holsterSound: {fileID: 0}

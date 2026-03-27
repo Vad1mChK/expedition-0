@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,27 +9,37 @@ namespace Expedition0.Tasks.Experimental
         public UnityEvent onCorrect;
         public UnityEvent onIncorrect;
         public UnityEvent onNthIncorrect;
-        [SerializeField] protected int maxErrorsCount = 3;
+        [SerializeField, Min(1)] protected int maxErrorsCount = 3;
+
+        [Header("Debug, Status")]
+        private int _attemptsCount;
         private int _errorsCount;
+        private int _consecutiveErrorsCount;
+
+        
+        public int AttemptsCount => _attemptsCount;
+        public int ErrorsCount => _errorsCount;
+        public int ConsecutiveErrorsCount => _consecutiveErrorsCount;
+        
         
         public virtual void ValidateTask()
         {
+            ++_attemptsCount;
+            
             bool correct = ValidateTaskInternal();
-
             if (correct)
             {
+                _consecutiveErrorsCount = 0;
                 onCorrect?.Invoke();
-                _errorsCount = 0;
-                return;
-            }
+            } else {
+                ++_errorsCount;
+                ++_consecutiveErrorsCount;
+                onIncorrect?.Invoke();
 
-            onIncorrect?.Invoke();
-            ++_errorsCount;
-
-            if (_errorsCount >= maxErrorsCount)
-            {
-                onNthIncorrect?.Invoke();
-                _errorsCount = 0;
+                if (_consecutiveErrorsCount != 0 && _consecutiveErrorsCount % maxErrorsCount == 0)
+                {
+                    onNthIncorrect?.Invoke();
+                }
             }
         }
 

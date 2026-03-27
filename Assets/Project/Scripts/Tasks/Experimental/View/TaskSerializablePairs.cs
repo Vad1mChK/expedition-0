@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Expedition0.Tasks.Experimental.Hint;
 using UnityEngine;
 
 namespace Expedition0.Tasks.Experimental
@@ -50,5 +52,12 @@ namespace Expedition0.Tasks.Experimental
     {
         public NonaryOperatorType op;
         public Sprite sprite;
+    }
+
+    [Serializable]
+    public struct HintStateSpriteListPair
+    {
+        public HintViewState state;
+        public Sprite[] sprites;
     }
 }

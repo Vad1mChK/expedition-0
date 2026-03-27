@@ -1,4 +1,6 @@
 using Expedition0.Tasks.Experimental.Json;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using UnityEngine;
 
 namespace Expedition0.Tasks.Experimental
@@ -7,6 +9,8 @@ namespace Expedition0.Tasks.Experimental
     {
         public LogicNodeView leftRoot;
         public LogicNodeView rightRoot;
+        public bool balanced;
+        
         public void Awake()
         {
             BuildTaskGraph();
@@ -35,7 +39,7 @@ namespace Expedition0.Tasks.Experimental
 
             var model = leftRoot.Model;
             var dto = TaskSerializer.SerializeTask(model);
-            var json = JsonUtility.ToJson(dto);
+            var json = JsonConvert.SerializeObject(dto, Formatting.None);
             Debug.Log($"<b><color=cyan>Left root model: {json}</color></b>");
         }
         
@@ -49,7 +53,7 @@ namespace Expedition0.Tasks.Experimental
 
             var model = rightRoot.Model;
             var dto = TaskSerializer.SerializeTask(model);
-            var json = JsonUtility.ToJson(dto);
+            var json = JsonConvert.SerializeObject(dto, Formatting.None);
             Debug.Log($"<b><color=cyan>Right root model: {json}</color></b>");
         }
     }

@@ -554,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3674832a64534242bbdf03efb8c527b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Items.Core.ItemPickup
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: bf6652b2707d8ca4188d0e56bfd3ec94, type: 2}
   _interactable: {fileID: 3458182690825574342}
   _outline: {fileID: 2135341998694797360}
 --- !u!1 &8229037886969567421
