@@ -115,6 +115,7 @@ MonoBehaviour:
   maxErrorsCount: 3
   leftRoot: {fileID: 7491768032568110969}
   rightRoot: {fileID: 2218986810610592567}
+  balanced: 0
 --- !u!1001 &78631035918672221
 PrefabInstance:
   m_ObjectHideFlags: 0
