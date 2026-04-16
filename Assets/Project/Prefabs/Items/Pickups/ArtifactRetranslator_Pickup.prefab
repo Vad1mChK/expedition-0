@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 8571664182263966785}
   - component: {fileID: 1889944899592590313}
   - component: {fileID: 2502131135835640176}
+  - component: {fileID: 7051815601352716929}
   m_Layer: 0
   m_Name: ArtifactRetranslator_Pickup
   m_TagString: Untagged
@@ -334,7 +335,39 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: a550ec1f5970ea94485ea44db76325c9, type: 2}
   _interactable: {fileID: 1889944899592590313}
   _outline: {fileID: 1483505514768146457}
-  progressIncrement: 4
   onAcquire:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7051815601352716929}
+        m_TargetAssemblyTypeName: Expedition0.Environment.PrefabSummoner, Assembly-CSharp
+        m_MethodName: SummonAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7051815601352716929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421195437819129980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e48f7151d34cb1ba03f2d64d2af3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Environment.PrefabSummoner
+  defaultTransform: {fileID: 0}
+  entriesToSummon:
+  - prefab: {fileID: 4786917340008106900, guid: 716bd7d19f30116499d0a9850cce39b7, type: 3}
+    transform: {fileID: 8384455837955352089}
+    useTransformAsParent: 0
+    hasLifetime: 1
+    lifetime: 5
+  summonAllOnAwake: 0
+  destroyAllOnDestroy: 0

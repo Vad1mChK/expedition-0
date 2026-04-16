@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Environment.Artifacts.Artifact
   artifactType: 1
-  progressAddition: 4
   onAcquire:
     m_PersistentCalls:
       m_Calls:

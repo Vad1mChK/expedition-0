@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Levels/Bridge Corridor.unity
     guid: afc105953ceb57c4a936ebb6de65faa3
   - enabled: 1
+    path: Assets/Project/Scenes/Levels/Lobby.unity
+    guid: cd998ce6e0b90384c9cd8b47405f7bea
+  - enabled: 1
     path: Assets/Project/Scenes/Levels/Lobby_Default.unity
     guid: 0b786d865842a3a4daf17b724e40f69b
   - enabled: 1

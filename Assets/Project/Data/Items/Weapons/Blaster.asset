@@ -19,5 +19,5 @@ MonoBehaviour:
   pickupPrefab: {fileID: 6818915762141378965, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
   heldPrefab: {fileID: 6818915762141378965, guid: e09117c5ba316844f8470426c7d2820d, type: 3}
   inventoryPrefab: {fileID: 6818915762141378965, guid: ac4ca81adf67f514da22e7b4fcffd40f, type: 3}
-  equipSound: {fileID: 0}
-  holsterSound: {fileID: 0}
+  equipSound: {fileID: 8300000, guid: 699a81fb920334b4790fecf38760039f, type: 3}
+  holsterSound: {fileID: 8300000, guid: 0c562be74442e72468f566be9abec92a, type: 3}

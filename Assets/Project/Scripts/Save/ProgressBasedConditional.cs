@@ -1,4 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Expedition0.Save.Experimental;
+using Expedition0.Util;
 using UnityEngine;
 
 namespace Expedition0.Save
@@ -6,86 +10,60 @@ namespace Expedition0.Save
     [Serializable]
     public class ProgressBasedConditional<T>
     {
-        public enum ProgressBasedConditionalKind
+        public enum ConditionKind
         {
-            MainLevelCount,
-            GameProgressMask
+            CompletedLevels,
+            InventoryItems,
+            TasksSolved,
         }
 
-        public enum ProgressBasedConditionalComparison
-        {
-            Less,
-            LessOrEqual,
-            Equal,
-            GreaterOrEqual,
-            Greater,
-            NotEqual
-        }
+        public enum ComparisonMode { IntComparison, SetComparison }
 
-        [Header("Condition")]
-        public ProgressBasedConditionalKind kind;
-        public ProgressBasedConditionalComparison comparison;
+        [Header("Target")]
+        public ConditionKind kind;
+        
+        [Tooltip("Used for Int-based stats (Deaths, Tasks, etc)")]
+        public int targetInt;
+        public ProgressBasedConditionalComparison intOp;
 
-        [Tooltip("Used if kind == MainLevelCount")]
-        // [ShowIf(nameof(kind), (int)ProgressBasedConditionalKind.MainLevelCount)]
-        public int intValue;
-
-        [Tooltip("Used if kind == GameProgressMask")]
-        // [ShowIf(nameof(kind), (int)ProgressBasedConditionalKind.GameProgressMask)]
-        public GameProgress maskValue;
+        [Tooltip("Used for Set-based checks (Levels, Inventory)")]
+        public List<string> targetStrings;
+        public SetUtils.SetComparison setOp;
 
         [Header("Outcome")]
         public T outcome;
 
-        public bool SatisfiedForCurrentProgress() =>
-            SatisfiedFor(SaveManager.LoadProgress());
+        public bool IsSatisfied() => IsSatisfied(PlaythroughLifecycleManager.Instance.CurrentData);
 
-        public bool SatisfiedFor(GameProgress progress)
+        public bool IsSatisfied(PlaythroughSaveData data)
         {
-            switch (kind)
+            return kind switch
             {
-                case ProgressBasedConditionalKind.MainLevelCount:
-                    int count = SaveManager.MainLevelsCompletedCount((int)progress);
-                    return CompareInts(count, intValue, comparison);
-
-                case ProgressBasedConditionalKind.GameProgressMask:
-                    var mask = maskValue & GameProgress.All;
-                    bool hasFlags = (progress & mask) == mask;
-                    return CompareProgress(progress, mask, comparison);
-
-                default:
-                    return false;
-            }
+                ConditionKind.CompletedLevels => SetUtils.CompareSets(data.completedLevels, targetStrings, setOp),
+                ConditionKind.InventoryItems => SetUtils.CompareSets(data.inventory.Select(i => i.itemId), targetStrings, setOp),
+                ConditionKind.TasksSolved => CompareInts(data.taskSolvedCount, targetInt, intOp),
+                _ => false
+            };
         }
-        
-        // Helpers
-        
+
         private static bool CompareInts(int a, int b, ProgressBasedConditionalComparison op)
         {
+            Debug.Log($"Checking condition: {a} {op} {b}");
             return op switch
             {
-                ProgressBasedConditionalComparison.Less          => a <  b,
-                ProgressBasedConditionalComparison.LessOrEqual   => a <= b,
-                ProgressBasedConditionalComparison.Equal         => a == b,
-                ProgressBasedConditionalComparison.GreaterOrEqual=> a >= b,
-                ProgressBasedConditionalComparison.Greater       => a >  b,
-                ProgressBasedConditionalComparison.NotEqual      => a != b,
+                ProgressBasedConditionalComparison.Less           => a <  b,
+                ProgressBasedConditionalComparison.LessOrEqual    => a <= b,
+                ProgressBasedConditionalComparison.Equal          => a == b,
+                ProgressBasedConditionalComparison.GreaterOrEqual => a >= b,
+                ProgressBasedConditionalComparison.Greater        => a >  b,
+                ProgressBasedConditionalComparison.NotEqual       => a != b,
                 _ => false
             };
         }
+    }
 
-        private static bool CompareProgress(GameProgress a, GameProgress b, ProgressBasedConditionalComparison op)
-        {
-            return op switch
-            {
-                ProgressBasedConditionalComparison.Less => (b & a) == a && ((int)b & (int)~a) != 0,
-                ProgressBasedConditionalComparison.LessOrEqual => (b & a) == a,
-                ProgressBasedConditionalComparison.Equal => a == b,
-                ProgressBasedConditionalComparison.GreaterOrEqual => (a & b) == b,
-                ProgressBasedConditionalComparison.Greater => (a & b) == b && ((int)a & (int)~b) != 0,
-                ProgressBasedConditionalComparison.NotEqual => a != b,
-                _ => false
-            };
-        }
+    public enum ProgressBasedConditionalComparison
+    {
+        Less, LessOrEqual, Equal, GreaterOrEqual, Greater, NotEqual
     }
 }

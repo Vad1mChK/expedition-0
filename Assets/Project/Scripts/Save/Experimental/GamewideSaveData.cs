@@ -7,7 +7,10 @@ namespace Expedition0.Save.Experimental
 {
     public class GamewideSaveData : ExpeditionBaseSaveData<GamewideSaveData>
     {
+        public static readonly int SerialVersionId = 2026_04_14;
+        
         public List<string> charactersUnlocked = new();
+        public List<string> levelsUnlocked = new();
         public List<string> musicUnlocked = new();
         public List<string> itemsUnlocked = new();
         public List<string> endingsUnlocked = new();

@@ -1,6 +1,7 @@
 {
+  "saveVersion": 20260414,
   "charactersUnlocked": [
-    "e0:soviet_pilot", "e0:shuttle", "e0:soviet_general", "e0:symmetry", "e0:illusion", "e0:hyperion", "e0_fantomas"
+    "e0:soviet_pilot", "e0:illusion", "e0:hyperion"
   ],
   "musicUnlocked": [
     "e0:soviet_stars",

@@ -5,31 +5,85 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b9dc62a-62e9-4981-bb24-6578aed24519" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/GamewideLifecycleManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/GamewideLifecycleManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/LevelLocalManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/LevelLocalManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughLifecycleManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughLifecycleManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/AssetRegistry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/AssetRegistry.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/ItemRegistry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/ItemRegistry.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/LevelRegistry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/LevelRegistry.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/MusicRegistry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/MusicRegistry.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Util/SetUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Util/SetUtils.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Expedition0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Expedition0/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NuGet.config.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NuGet.config.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Art/Materials/levels/misc/Poster_Space.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Art/Materials/levels/misc/Poster_Space.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Audio/Music/Prelude_of_the_Cosmos_intro.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Audio/Music/Prelude_of_the_Cosmos_intro.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Audio/Music/Prelude_of_the_Cosmos_loop.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Audio/Music/Prelude_of_the_Cosmos_loop.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Data/Audio/Music/Prelude of the Cosmos.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Data/Audio/Music/Prelude of the Cosmos.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Data/Items/Weapons/Blaster.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Data/Items/Weapons/Blaster.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/misc/Elevator_EndLevel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/misc/Elevator_EndLevel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/full_experimental/ternary/TernaryTask_Tutorial_0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/full_experimental/ternary/TernaryTask_Tutorial_0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/misc/Elevator_StartLevel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/misc/Elevator_StartLevel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Artifact Retranslator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Artifact Retranslator.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Effects/ArtifactPickupEffect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Effects/ArtifactPickupEffect.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactCrystal_Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactCrystal_Pickup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactDisk_Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactDisk_Pickup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactRetranslator_Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactRetranslator_Pickup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/XR/XR Origin (XR Health).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/XR/XR Origin (XR Health).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/PlaythroughSaveData.schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/PlaythroughSaveData.schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultGamewideSave.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultGamewideSave.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultPlaythroughSave.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultPlaythroughSave.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/perfectGamewideSave.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/perfectGamewideSave.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenuOld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenuOld.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Bridge Corridor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Bridge Corridor.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/Lightmap-0_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-0.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-0.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-1.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-1.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-10.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-10.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-11.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-11.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-12.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-12.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-13.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-13.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-14.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-14.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-2.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-2.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-3.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-3.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-4.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-4.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-5.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-5.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-6.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-6.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-7.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-7.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-8.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-8.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-9.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall/ReflectionProbe-9.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sandbox/TaskExperiments.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sandbox/TaskExperiments.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Audio/MusicChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Audio/MusicChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/CharacterAI/IllusionAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/CharacterAI/IllusionAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/CharacterAI/IllusionAltAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/CharacterAI/IllusionAltAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/SaveManagerMenuItems.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/SaveManagerMenuItems.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/Artifact.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/Artifact.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactStandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactStandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactType.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Elevator/ElevatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Elevator/ElevatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Health/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Equipment/HandEquipment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Equipment/HandEquipment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryWheel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryWheel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/ItemsPickup/ArtifactPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/ItemsPickup/ArtifactPickup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/Credits/CreditsSceneChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/Credits/CreditsSceneChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/MainMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/SoundTestController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/SoundTestController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/ExpeditionBaseSaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/ExpeditionBaseSaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/GamewideSaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/GamewideSaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/NewSaveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/NewSaveSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughSaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughSaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/GameProgressEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/GameProgressEvent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditional.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditional.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditionalMultiSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditionalMultiSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditionalResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditionalResolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressUpdater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/SaveManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/SaveManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Tests.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Tests/SaveManagerTester.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Tests/SaveManagerTester.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/View/LogicTaskView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/View/LogicTaskView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sandbox/IllusionExperiment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sandbox/IllusionExperiment.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +93,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Vad1mChK&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Vad1mChK/expedition-0.git&quot;,
+    &quot;accountId&quot;: &quot;56d331b8-d289-4228-8b46-9493c445f73f&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/6000.2.7f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.render-pipelines.core/Editor/Camera/CameraUI.Environment.Drawers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultGamewideSave.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultPlaythroughSave.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/perfectGamewideSave.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactStandController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Environment/PrefabSummoner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Core/ItemPickup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Equipment/HandEquipment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryWheel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/ItemsPickup/ArtifactPickup.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
@@ -119,13 +199,25 @@
       <workItem from="1764757482258" duration="1452000" />
       <workItem from="1764769110357" duration="420000" />
       <workItem from="1776011213433" duration="1192000" />
-      <workItem from="1776164395537" duration="2923000" />
+      <workItem from="1776164395537" duration="31446000" />
+      <workItem from="1776246268145" duration="22089000" />
+      <workItem from="1776335479315" duration="1651000" />
     </task>
+    <task id="LOCAL-00001" summary="added updated lobby location">
+      <option name="closed" value="true" />
+      <created>1776167595631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776167595631</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
@@ -135,5 +227,7 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="added updated lobby location" />
+    <option name="LAST_COMMIT_MESSAGE" value="added updated lobby location" />
   </component>
 </project>

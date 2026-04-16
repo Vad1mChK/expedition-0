@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 
@@ -16,16 +17,14 @@ namespace Expedition0.Save.Experimental
             SaveFile(data, PlaythroughFileName);
 
         public static GamewideSaveData LoadGamewide() =>
-            LoadFile<GamewideSaveData>(GamewideFileName) ?? GamewideSaveData.Default;
+            LoadFile<GamewideSaveData>(GamewideFileName, GamewideSaveData.SerialVersionId) ?? GamewideSaveData.Default;
 
         public static PlaythroughSaveData LoadPlaythrough() =>
-            LoadFile<PlaythroughSaveData>(PlaythroughFileName) ?? PlaythroughSaveData.Default;
+            LoadFile<PlaythroughSaveData>(PlaythroughFileName, PlaythroughSaveData.SerialVersionId) ?? PlaythroughSaveData.Default;
 
-        public static void DeletePlaythrough()
-        {
-            string path = Path.Combine(BasePath, PlaythroughFileName);
-            if (File.Exists(path)) File.Delete(path);
-        }
+        public static void DeletePlaythrough() => DeleteFile(PlaythroughFileName);
+
+        public static void DeleteGamewide() => DeleteFile(GamewideFileName);
 
         private static void SaveFile<T>(T data, string fileName)
         {
@@ -34,13 +33,34 @@ namespace Expedition0.Save.Experimental
             File.WriteAllText(fullPath, json);
         }
 
-        private static T LoadFile<T>(string fileName) where T : class
+        private static void DeleteFile(string fileName)
+        {
+            string path = Path.Combine(BasePath, fileName);
+            if (File.Exists(path)) File.Delete(path);
+        }
+
+        private static T LoadFile<T>(string fileName, int? expectedVersion = null) where T : ExpeditionBaseSaveData<T>, new()
         {
             string fullPath = Path.Combine(BasePath, fileName);
             if (!File.Exists(fullPath)) return null;
 
-            string json = File.ReadAllText(fullPath);
-            return JsonUtility.FromJson<T>(json);
+            try
+            {
+                string json = File.ReadAllText(fullPath);
+                T data = JsonUtility.FromJson<T>(json);
+
+                if (expectedVersion != null && data.saveVersion != expectedVersion)
+                {
+                    Debug.LogWarning($"Version mismatch for {fileName} (expected {expectedVersion}, got {data.saveVersion}). Dropping save.");
+                    return null;
+                }
+                return data;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to load {fileName}: {e.Message}");
+                return null;
+            }
         }
     }
 }

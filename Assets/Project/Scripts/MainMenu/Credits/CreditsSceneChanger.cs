@@ -87,7 +87,7 @@ namespace Expedition0.MainMenu.Credits
 
         private void LoadScene()
         {
-            var scene = sceneResolver.ResolveForCurrentProgress();
+            var scene = sceneResolver.Resolve();
             SceneManager.LoadScene(scene);
         }
     }

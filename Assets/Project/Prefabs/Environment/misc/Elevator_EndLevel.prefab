@@ -787,13 +787,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  kind: 1
-  elevatorLevel: 2
-  sceneToLoad: 
-  lockedConditions: []
-  defaultLocked: 0
-  delayUntilTransport: 2.5
-  progressBeforeTransport: 0
   vfx: {fileID: 0}
   leftSpriteRenderer: {fileID: 3115184823576281970}
   rightSpriteRenderer: {fileID: 2244455219121176988}
@@ -840,6 +833,20 @@ MonoBehaviour:
     rightUnlockedSprite: {fileID: -2026020009, guid: 57071f881314be5489c15f266bcf7e7f, type: 3}
     leftLockedSprite: {fileID: -1850554506, guid: 57071f881314be5489c15f266bcf7e7f, type: 3}
     rightLockedSprite: {fileID: 753924384, guid: 57071f881314be5489c15f266bcf7e7f, type: 3}
+  kind: 1
+  elevatorLevel: 2
+  lockedConditions:
+    conditionalValues: []
+    defaultValue: 0
+  delayUntilTransport: 2.5
+  autoTransport: 0
+  levelIdToLoad: 
+  onBeginTransport:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndTransport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2846357681485494949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5220634484725467191, guid: 8cfd23d37bb72c9498e3859f2aca9d3a, type: 3}

@@ -1,23 +1,30 @@
 using System;
+using Expedition0.Save.Experimental;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Expedition0.Save
 {
-    public class ProgressUpdater: MonoBehaviour
+    [Serializable]
+    public class PlaythroughDataEvent : UnityEngine.Events.UnityEvent<PlaythroughSaveData> { }
+
+    public class ProgressUpdater : MonoBehaviour
     {
-        [SerializeField] private GameProgressEvent onUpdateProgress;
-        
-        public void SetCompleted(GameProgress progress)
+        [SerializeField] private PlaythroughDataEvent onUpdateProgress;
+
+        public void MarkLevelComplete(string levelId)
         {
-            SaveManager.SetCompleted(progress);
-            onUpdateProgress?.Invoke(SaveManager.LoadProgress());
+            var data = PlaythroughLifecycleManager.Instance.CurrentData;
+            if (!data.completedLevels.Contains(levelId))
+            {
+                data.completedLevels.Add(levelId);
+                PlaythroughLifecycleManager.Instance.SavePlaythroughProgress();
+                onUpdateProgress?.Invoke(data);
+            }
         }
 
-        public void ResetProgress()
+        public void ForceTriggerUpdate()
         {
-            SaveManager.ResetSave();
-            onUpdateProgress?.Invoke((GameProgress)0);
+            onUpdateProgress?.Invoke(PlaythroughLifecycleManager.Instance.CurrentData);
         }
     }
 }

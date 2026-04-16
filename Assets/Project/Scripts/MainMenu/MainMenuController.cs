@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Expedition0.Save;
+using Expedition0.Save.Experimental;
 
 namespace Expedition0.MainMenu
 {
@@ -23,19 +24,6 @@ namespace Expedition0.MainMenu
             public CanvasGroup group; // root for that page
         }
 
-        [Serializable]
-        public struct ConditionalScene
-        {
-            public GameProgress progressConditions; // required flags
-            public int priority; // higher wins on ties
-            public string sceneName;
-
-            public bool IsSatisfied(GameProgress p)
-            {
-                return (p & progressConditions) == progressConditions;
-            }
-        }
-
         [Header("Panels")] [SerializeField] private List<PanelRef> panels;
         [SerializeField] private Panel startPanel = Panel.MainMenu;
 
@@ -46,9 +34,6 @@ namespace Expedition0.MainMenu
 
         [Tooltip("Fallback scene if no rule matches (can be empty to hide Continue).")] [SerializeField]
         private string defaultContinueSceneName;
-
-        [Tooltip("Rules to pick the Continue scene based on progress.")] [SerializeField]
-        private List<ConditionalScene> continueRules = new();
 
         private readonly Dictionary<Panel, CanvasGroup> _map = new();
 
@@ -69,18 +54,21 @@ namespace Expedition0.MainMenu
         // ——— UI hooks ———
         public void OnPressNewGame()
         {
-            if (!string.IsNullOrEmpty(newGameSceneName))
-            {
-                SaveManager.ResetSave();
-                SceneManager.LoadScene(newGameSceneName);
-            }
+            // if (!string.IsNullOrEmpty(newGameSceneName))
+            // {
+            //     SaveManager.ResetSave();
+            //     SceneManager.LoadScene(newGameSceneName);
+            // }
+            PlaythroughLifecycleManager.Instance?.ResetPlaythroughProgress();
+            PlaythroughLifecycleManager.Instance?.LoadRespawnLevel();
         }
 
         public void OnPressContinue()
         {
-            var scene = ResolveContinueScene(SaveManager.LoadProgress());
-            if (!string.IsNullOrEmpty(scene))
-                SceneManager.LoadScene(scene);
+            // var scene = ResolveContinueScene(SaveManager.LoadProgress());
+            // if (!string.IsNullOrEmpty(scene))
+            //     SceneManager.LoadScene(scene);
+            PlaythroughLifecycleManager.Instance?.LoadRespawnLevel();
         }
 
         public void OnPressSettings()
@@ -117,25 +105,10 @@ namespace Expedition0.MainMenu
         private void UpdateContinueButton()
         {
             if (!continueButton) return;
-            var can = !string.IsNullOrEmpty(ResolveContinueScene(SaveManager.LoadProgress()));
+            var can = PlaythroughLifecycleManager.Instance.CurrentData.taskSolvedCount > 0;
             Debug.Log($"Can Continue: {can}");
             continueButton.gameObject.SetActive(can);
             continueButton.interactable = can;
-        }
-
-        private string ResolveContinueScene(GameProgress p)
-        {
-            var best = defaultContinueSceneName;
-            var bestPr = int.MinValue;
-
-            foreach (var r in continueRules)
-                if (!string.IsNullOrEmpty(r.sceneName) && r.IsSatisfied(p) && r.priority >= bestPr)
-                {
-                    best = r.sceneName;
-                    bestPr = r.priority;
-                }
-
-            return best;
         }
 
         private static void SetGroup(CanvasGroup g, bool on)

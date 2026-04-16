@@ -6,10 +6,12 @@ namespace Expedition0.Save.Experimental
     [Serializable]
     public abstract class ExpeditionBaseSaveData<T> where T : class, new()
     {
+        public int saveVersion;
+        
         protected static T LoadTemplateFromResources(string fileName)
         {
             var jsonFile = Resources.Load<TextAsset>($"SaveSystem/{fileName}");
-            if (jsonFile != null)
+            if (jsonFile)
             {
                 try
                 {

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Expedition0.Save.Experimental;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -8,18 +9,16 @@ namespace Expedition0.Save
     [Serializable]
     public class ProgressBasedConditionalResolver<T>
     {
-        public List<ProgressBasedConditional<T>> conditionalValues = new List<ProgressBasedConditional<T>>();
+        public List<ProgressBasedConditional<T>> conditionalValues = new();
         public T defaultValue;
 
-        public T ResolveForCurrentProgress() => ResolveFor(SaveManager.LoadProgress());
-
-        public T ResolveFor(GameProgress progress)
+        public T Resolve()
         {
-            foreach (var value in conditionalValues)
+            var data = PlaythroughLifecycleManager.Instance.CurrentData;
+            foreach (var cond in conditionalValues)
             {
-                if (value.SatisfiedFor(progress)) return value.outcome;
+                if (cond.IsSatisfied(data)) return cond.outcome;
             }
-
             return defaultValue;
         }
     }

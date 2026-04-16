@@ -3,6 +3,7 @@ using Expedition0.Items.Data;
 using Expedition0.Items.Inventory;
 using Expedition0.Items.Core;
 using Expedition0.Items.UI;
+using Expedition0.Save.Experimental;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,36 +16,28 @@ namespace Expedition0.Items.Equipment
         [SerializeField] private InventoryWheel inventoryWheel;
         [SerializeField] private Transform heldItemMount;
 
-        [Header("Input Actions (Right Hand)")]
-        [SerializeField] private InputActionProperty triggerPressedAction;       // Trigger press
-        [SerializeField] private InputActionProperty buttonAAction;             // Equip/Holster
-        [SerializeField] private InputActionProperty buttonBAction;             // Inventory open/close
-        [SerializeField] private InputActionProperty rightStickAction;          // Vector2 or Axis; we use X
+        [Header("Input Actions")]
+        [SerializeField] private InputActionProperty triggerPressedAction;
+        [SerializeField] private InputActionProperty buttonAAction; // Equip/Holster
+        [SerializeField] private InputActionProperty buttonBAction; // Inventory Toggle
+        [SerializeField] private InputActionProperty rightStickAction;
 
-        [Header("Inventory Spin")]
-        [Range(0.1f, 0.95f)] [SerializeField] private float spinThreshold = 0.7f;
-        [Range(0.0f, 0.9f)]  [SerializeField] private float spinRearmThreshold = 0.3f;
-        [Min(0.0f)]          [SerializeField] private float spinCooldownSeconds = 0.18f;
+        [Header("Spin Settings")]
+        [SerializeField] private float spinThreshold = 0.7f;
+        [SerializeField] private float spinRearmThreshold = 0.3f;
+        [SerializeField] private float spinCooldownSeconds = 0.15f;
 
-        [Header("Suppression While Inventory Open (disable snap turn)")]
-        [SerializeField] private Behaviour[] disableBehavioursWhenInventoryOpen;
-        [SerializeField] private InputActionProperty[] disableActionsWhenInventoryOpen;
-
-        [Header("Suppression While Item Equipped (disable 'usual trigger' interactions)")]
-        [SerializeField] private Behaviour[] disableBehavioursWhenItemEquipped;
-        [SerializeField] private InputActionProperty[] disableActionsWhenItemEquipped;
+        [Header("Suppression")]
+        [SerializeField] private Behaviour[] disableWhenInventoryOpen;
+        [SerializeField] private Behaviour[] disableWhenItemEquipped;
 
         private GameObject _heldObject;
         private ItemHeld _heldItem;
         private ItemData _heldData;
 
         private bool _inventoryOpen;
-
         private bool _spinArmed = true;
         private float _nextSpinAllowedTime;
-
-        private readonly HashSet<InputAction> _actionsDisabledByInventory = new();
-        private readonly HashSet<InputAction> _actionsDisabledByEquip = new();
 
         private void Awake()
         {
@@ -62,11 +55,9 @@ namespace Expedition0.Items.Equipment
             BindAction(triggerPressedAction, OnTriggerPerformed, OnTriggerCanceled);
             BindAction(buttonAAction, OnButtonAPerformed, null);
             BindAction(buttonBAction, OnButtonBPerformed, null);
-
             BindAction(rightStickAction, OnRightStickPerformed, OnRightStickCanceled);
 
-            // Ensure inventory starts closed (unless you want otherwise).
-            SetInventoryOpen(_inventoryOpen);
+            SetInventoryOpen(false);
         }
 
         private void OnDisable()
@@ -80,51 +71,53 @@ namespace Expedition0.Items.Equipment
             UnbindAction(triggerPressedAction, OnTriggerPerformed, OnTriggerCanceled);
             UnbindAction(buttonAAction, OnButtonAPerformed, null);
             UnbindAction(buttonBAction, OnButtonBPerformed, null);
-
             UnbindAction(rightStickAction, OnRightStickPerformed, OnRightStickCanceled);
-
-            // Restore anything we suppressed.
-            ApplyInventorySuppression(false);
-            ApplyEquippedSuppression(false);
         }
 
         private void HandleItemAdded(ItemData data)
         {
             if (data == null) return;
 
-            // Make the picked-up item the "current" wheel selection if the wheel supports it.
-            // If you don't implement SelectItemById, this call can be removed.
+            // Update the wheel selection and auto-equip
             if (inventoryWheel) inventoryWheel.SelectItemById(data.itemId);
-
-            // Equip immediately on pickup if it has a held prefab.
-            if (data.heldPrefab != null)
-                Equip(data);
+            if (_heldObject == null && data.heldPrefab != null) Equip(data);
         }
 
         private void HandleInventoryChanged()
         {
-            // If the currently held item disappears from inventory (consumed to 0, removed, etc.), holster it.
-            if (_heldData == null || inventory == null) return;
-
-            if (inventory.GetCount(_heldData.itemId) <= 0)
+            // If our held item is no longer in the SaveData inventory, put it away.
+            if (_heldData != null && inventory.GetCount(_heldData.itemId) <= 0)
+            {
                 Holster();
+            }
         }
 
-        private void OnButtonBPerformed(InputAction.CallbackContext ctx)
-        {
-            SetInventoryOpen(!_inventoryOpen);
-        }
+        private void OnButtonBPerformed(InputAction.CallbackContext ctx) => SetInventoryOpen(!_inventoryOpen);
 
         private void SetInventoryOpen(bool open)
         {
             _inventoryOpen = open;
+            if (inventoryWheel != null) inventoryWheel.gameObject.SetActive(open);
+            
+            // Hand/UI Mutual Exclusion
+            // If the inventory is OPEN, the hand should be HIDDEN.
+            // If the inventory is CLOSED, the hand should be SHOWN (if we have an item).
+            if (_heldObject != null)
+            {
+                _heldObject.SetActive(!open);
+            }
+            else if (!open)
+            {
+                if (inventoryWheel != null && inventoryWheel.TryGetSelectedItemData(out var selected))
+                {
+                    Equip(selected);
+                }
+            }
+            
+            // Toggle behaviours (like snap turn)
+            foreach (var b in disableWhenInventoryOpen) 
+                if (b) b.enabled = !open;
 
-            if (inventoryWheel != null)
-                inventoryWheel.gameObject.SetActive(open);
-
-            ApplyInventorySuppression(open);
-
-            // When opening, arm spin so the first flick registers.
             if (open)
             {
                 _spinArmed = true;
@@ -134,236 +127,105 @@ namespace Expedition0.Items.Equipment
 
         private void OnButtonAPerformed(InputAction.CallbackContext ctx)
         {
-            // A: equip/holster the current (selected) item, if any.
             if (inventoryWheel == null)
             {
-                // If wheel is missing, treat A as "holster current".
                 if (_heldItem != null) Holster();
                 return;
             }
 
-            if (!inventoryWheel.TryGetSelectedItemData(out var selectedData) || selectedData == null)
+            if (inventoryWheel.TryGetSelectedItemData(out var selectedData))
             {
-                if (_heldItem != null) Holster();
-                return;
+                if (_heldData == selectedData) Holster();
+                else Equip(selectedData);
             }
-
-            // Toggle: if selected already equipped -> holster; else equip.
-            if (_heldData == selectedData)
-                Holster();
-            else
-                Equip(selectedData);
         }
 
         private void OnRightStickPerformed(InputAction.CallbackContext ctx)
         {
             if (!_inventoryOpen) return;
-            if (inventoryWheel == null) return;
+            
+            float x = ctx.ReadValue<Vector2>().x;
+            float absX = Mathf.Abs(x);
 
-            float x = ReadStickX(ctx);
-            HandleSpin(x);
-        }
-
-        private void OnRightStickCanceled(InputAction.CallbackContext ctx)
-        {
-            // Rearm when stick returns to rest.
-            _spinArmed = true;
-        }
-
-        private void HandleSpin(float x)
-        {
-            float abs = Mathf.Abs(x);
-
-            if (abs <= spinRearmThreshold)
+            if (absX <= spinRearmThreshold)
             {
                 _spinArmed = true;
                 return;
             }
 
-            if (!_spinArmed) return;
-            if (abs < spinThreshold) return;
-
-            float now = Time.unscaledTime;
-            if (now < _nextSpinAllowedTime) return;
-
-            int delta = x > 0f ? 1 : -1;
-            inventoryWheel.MoveSelection(delta);
-
-            _spinArmed = false;
-            _nextSpinAllowedTime = now + spinCooldownSeconds;
-        }
-
-        private void OnTriggerPerformed(InputAction.CallbackContext ctx)
-        {
-            // Trigger:
-            // - If an item is equipped and inventory is closed: use it.
-            // - Otherwise do nothing, letting "usual" trigger logic run elsewhere.
-            if (_inventoryOpen) return;
-
-            if (_heldItem != null)
-                _heldItem.ProcessTrigger(true);
-        }
-
-        private void OnTriggerCanceled(InputAction.CallbackContext ctx)
-        {
-            if (_inventoryOpen) return;
-
-            if (_heldItem != null)
-                _heldItem.ProcessTrigger(false);
-        }
-
-        public bool Equip(ItemData data)
-        {
-            if (inventory == null || data == null) return false;
-
-            if (heldItemMount == null)
+            if (_spinArmed && absX >= spinThreshold && Time.unscaledTime >= _nextSpinAllowedTime)
             {
-                Debug.LogError("HandEquipment: heldItemMount is not assigned.");
-                return false;
+                inventoryWheel.MoveSelection(x > 0 ? 1 : -1);
+                _spinArmed = false;
+                _nextSpinAllowedTime = Time.unscaledTime + spinCooldownSeconds;
             }
+        }
 
-            if (inventory.GetCount(data.itemId) <= 0)
-                return false;
+        private void OnRightStickCanceled(InputAction.CallbackContext ctx) => _spinArmed = true;
 
-            if (data.heldPrefab == null)
-                return false;
-
-            // If equipping the same item, do nothing.
-            if (_heldData == data && _heldObject != null)
-                return true;
+        public void Equip(ItemData data)
+        {
+            if (data == null || data.heldPrefab == null) return;
+            if (_heldData == data) return;
 
             Holster();
 
             _heldObject = Instantiate(data.heldPrefab, heldItemMount, false);
+            
+            // NEW: Ensure the newly equipped item is hidden if the inventory is currently open
+            _heldObject.SetActive(!_inventoryOpen);
+            
             _heldData = data;
-
             _heldItem = _heldObject.GetComponentInChildren<ItemHeld>(true);
-            if (_heldItem != null)
+
+            if (_heldItem)
             {
                 _heldItem.Initialize(data, inventory);
                 _heldItem.OnEquip();
             }
-            else
-            {
-                Debug.LogWarning($"Held prefab for '{data.itemId}' has no ItemHeld component.");
-            }
 
-            ApplyEquippedSuppression(true);
-            return true;
+            foreach (var b in disableWhenItemEquipped) if (b) b.enabled = false;
         }
 
         public void Holster()
         {
-            if (_heldItem != null)
-                _heldItem.OnHolster();
-
-            if (_heldObject != null)
-                Destroy(_heldObject);
+            if (_heldItem != null) _heldItem.OnHolster();
+            if (_heldObject != null) Destroy(_heldObject);
 
             _heldObject = null;
             _heldItem = null;
             _heldData = null;
 
-            ApplyEquippedSuppression(false);
+            foreach (var b in disableWhenItemEquipped) if (b) b.enabled = true;
         }
 
-        private void ApplyInventorySuppression(bool suppress)
+        private void OnTriggerPerformed(InputAction.CallbackContext ctx)
         {
-            SetBehavioursEnabled(disableBehavioursWhenInventoryOpen, !suppress);
-            SetActionsEnabled(disableActionsWhenInventoryOpen, !suppress, _actionsDisabledByInventory);
+            if (!_inventoryOpen && _heldItem != null) _heldItem.ProcessTrigger(true);
         }
 
-        private void ApplyEquippedSuppression(bool suppress)
+        private void OnTriggerCanceled(InputAction.CallbackContext ctx)
         {
-            SetBehavioursEnabled(disableBehavioursWhenItemEquipped, !suppress);
-            SetActionsEnabled(disableActionsWhenItemEquipped, !suppress, _actionsDisabledByEquip);
+            if (_heldItem != null) _heldItem.ProcessTrigger(false);
         }
 
-        private static void SetBehavioursEnabled(Behaviour[] behaviours, bool enabled)
-        {
-            if (behaviours == null) return;
+        // --- Input Helpers ---
 
-            for (int i = 0; i < behaviours.Length; i++)
-            {
-                var b = behaviours[i];
-                if (b == null) continue;
-                b.enabled = enabled;
-            }
+        private void BindAction(InputActionProperty prop, System.Action<InputAction.CallbackContext> perf, System.Action<InputAction.CallbackContext> canc)
+        {
+            var a = prop.action;
+            if (a == null) return;
+            a.Enable();
+            if (perf != null) a.performed += perf;
+            if (canc != null) a.canceled += canc;
         }
 
-        private static void SetActionsEnabled(
-            InputActionProperty[] properties,
-            bool enabled,
-            HashSet<InputAction> trackingSet)
+        private void UnbindAction(InputActionProperty prop, System.Action<InputAction.CallbackContext> perf, System.Action<InputAction.CallbackContext> canc)
         {
-            if (properties == null) return;
-
-            for (int i = 0; i < properties.Length; i++)
-            {
-                var action = properties[i].action;
-                if (action == null) continue;
-
-                if (!enabled)
-                {
-                    if (action.enabled)
-                    {
-                        action.Disable();
-                        trackingSet.Add(action);
-                    }
-                }
-                else
-                {
-                    // Only re-enable actions we disabled ourselves.
-                    if (trackingSet.Remove(action))
-                        action.Enable();
-                }
-            }
-        }
-
-        private static float ReadStickX(InputAction.CallbackContext ctx)
-        {
-            // Works if your rightStickAction is either:
-            // - Vector2 (thumbstick)
-            // - Float (already mapped to X)
-            var valueType = ctx.valueType;
-
-            if (valueType == typeof(Vector2))
-                return ctx.ReadValue<Vector2>().x;
-
-            if (valueType == typeof(float))
-                return ctx.ReadValue<float>();
-
-            // Fallback: attempt Vector2, else 0.
-            try { return ctx.ReadValue<Vector2>().x; }
-            catch { return 0f; }
-        }
-
-        private static void BindAction(
-            InputActionProperty actionProperty,
-            System.Action<InputAction.CallbackContext> performed,
-            System.Action<InputAction.CallbackContext> canceled)
-        {
-            var action = actionProperty.action;
-            if (action == null) return;
-
-            action.Enable();
-
-            if (performed != null) action.performed += performed;
-            if (canceled != null) action.canceled += canceled;
-        }
-
-        private static void UnbindAction(
-            InputActionProperty actionProperty,
-            System.Action<InputAction.CallbackContext> performed,
-            System.Action<InputAction.CallbackContext> canceled)
-        {
-            var action = actionProperty.action;
-            if (action == null) return;
-
-            if (performed != null) action.performed -= performed;
-            if (canceled != null) action.canceled -= canceled;
-
-            action.Disable();
+            var a = prop.action;
+            if (a == null) return;
+            if (perf != null) a.performed -= perf;
+            if (canc != null) a.canceled -= canc;
         }
     }
 }
