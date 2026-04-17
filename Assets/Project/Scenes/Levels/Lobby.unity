@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 25b2eb60e2566e64fae24a560b98d070, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: a43803f8a7c562a4aba44b1a3a0c2442, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 7bbfd8046cd9db14bba4589f40e2f344, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -463,11 +463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.data[0].kind
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.data[1].kind
@@ -502,8 +502,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
-      propertyPath: lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.size
+      propertyPath: lockedConditions.conditionalValues.Array.data[0].targetInt
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
+      propertyPath: lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.data[1].targetStrings.Array.size
@@ -515,15 +519,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: 'lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.data[0]'
-      value: e0:artifact_disk
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
-      propertyPath: 'lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.data[1]'
       value: e0:artifact_transcoder
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
+      propertyPath: 'lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.data[1]'
+      value: e0:artifact_crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: 'lockedConditions.conditionalValues.Array.data[1].targetStrings.Array.data[0]'
-      value: e0:artifact_disk
+      value: e0:artifact_transcoder
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: 'lockedConditions.conditionalValues.Array.data[1].targetStrings.Array.data[1]'
@@ -1533,7 +1537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.data[0].kind
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.data[0].intOp
@@ -1544,8 +1548,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
-      propertyPath: lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.size
+      propertyPath: lockedConditions.conditionalValues.Array.data[0].targetInt
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
+      propertyPath: lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: 'lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.data[0]'
@@ -3538,6 +3546,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1794022452234797303, guid: 03600e1f15f3c9c40bffad0a84c1202c, type: 3}
   m_PrefabInstance: {fileID: 396317671}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &408587457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408587459}
+  - component: {fileID: 408587458}
+  m_Layer: 0
+  m_Name: Blaster_PickupSummoner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &408587458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408587457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e48f7151d34cb1ba03f2d64d2af3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Environment.PrefabSummoner
+  defaultTransform: {fileID: 408587459}
+  summonResolver:
+    conditionalValues:
+    - kind: 2
+      targetInt: 0
+      intOp: 0
+      targetStrings: []
+      setOp: 0
+      targetString: e0:weapon_blaster_pistol
+      outcome: []
+    defaultValue:
+    - prefab: {fileID: 6818915762141378965, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
+      transform: {fileID: 408587459}
+      useTransformAsParent: 1
+      hasLifetime: 0
+      lifetime: 0
+  summonAllOnAwake: 1
+  destroyAllOnDestroy: 0
+--- !u!4 &408587459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408587457}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 1, y: 1, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &424995566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5668,6 +5738,18 @@ PrefabInstance:
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.Array.data[0].comparison
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
+      propertyPath: lockedConditions.conditionalValues.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
+      propertyPath: lockedConditions.conditionalValues.Array.data[0].setOp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
+      propertyPath: lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2244455219121176988, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: m_Sprite
@@ -8830,63 +8912,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4059063738577741120, guid: 9c06b4ea7c0783f498c4737e15ded47d, type: 3}
   m_PrefabInstance: {fileID: 1283384362}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1291366531
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134930500206805381, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6818915762141378965, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
-      propertyPath: m_Name
-      value: Blaster_Pickup
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
 --- !u!1001 &1295905757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9101,7 +9126,7 @@ Transform:
   m_GameObject: {fileID: 1306746002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.52908, y: 0.29713, z: -5.40865}
+  m_LocalPosition: {x: -2, y: 3.5, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11307,26 +11332,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Audio.MusicChanger
   musicResolver:
     conditionalValues:
-    - kind: 0
-      targetInt: 0
-      intOp: 0
-      targetStrings:
-      - e0:machine_hall
+    - kind: 4
+      targetInt: 2
+      intOp: 3
+      targetStrings: []
       setOp: 3
-      outcome: e0:dawn_over_shanghai
-    - kind: 0
-      targetInt: 0
-      intOp: 0
-      targetStrings:
-      - e0:space_greenhouse
-      setOp: 3
-      outcome: e0:dawn_over_shanghai
-    - kind: 0
-      targetInt: 0
-      intOp: 0
-      targetStrings:
-      - e0:outer_skeleton
-      setOp: 3
+      targetString: 
       outcome: e0:dawn_over_shanghai
     defaultValue: e0:red_pagoda
   musicRegistry: {fileID: 11400000, guid: 13859d32cb7b7ba4f858027dce99322a, type: 2}
@@ -11781,7 +11792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.size
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
+      propertyPath: lockedConditions.conditionalValues.Array.data[0].setOp
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.data[0].targetStrings.Array.size
@@ -12027,6 +12042,7 @@ MonoBehaviour:
   levelId: e0:lobby
   completeLevelBeforeChange: 1
   autoUnlockThisLevelGamewide: 1
+  customRespawnPoint: {fileID: 1306746003}
   onLevelInitialized:
     m_PersistentCalls:
       m_Calls:
@@ -12047,6 +12063,19 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Expedition0.Save.Experimental.LevelLocalManager,
           Assembly-CSharp
         m_MethodName: SetAsRespawnLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1683359064}
+        m_TargetAssemblyTypeName: Expedition0.Save.Experimental.LevelLocalManager,
+          Assembly-CSharp
+        m_MethodName: CommitSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12087,6 +12116,34 @@ PrefabInstance:
       propertyPath: vfx
       value: 
       objectReference: {fileID: 786248896}
+    - target: {fileID: 726238791447347517, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: OnRespawn.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 726238791447347517, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: OnRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 726238791447347517, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: OnRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1683359064}
+    - target: {fileID: 726238791447347517, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: OnRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 726238791447347517, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: OnRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadRespawnLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 726238791447347517, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: OnRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Expedition0.Save.Experimental.LevelLocalManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 726238791447347517, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: OnRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6012131739045938952, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -13834,6 +13891,10 @@ PrefabInstance:
       value: Space Greenhouse
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
+      propertyPath: autoTransport
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: defaultLocked
       value: 1
       objectReference: {fileID: 0}
@@ -13868,6 +13929,10 @@ PrefabInstance:
     - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: lockedConditions.Array.data[0].comparison
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131406398601666644, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
+      propertyPath: lockedConditions.conditionalValues.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2244455219121176988, guid: 9fa4abf94c9f2434e952fa69e0b9b77a, type: 3}
       propertyPath: m_Sprite
@@ -14679,15 +14744,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.80783
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 51.763206
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.99949
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1725846382026780414, guid: 835cdc2cfabf021498b551d3a65a0933, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15095,6 +15160,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1472689060647616699}
   - {fileID: 1683359065}
   - {fileID: 1550059614}
   - {fileID: 1701900162}
@@ -15105,5 +15171,4 @@ SceneRoots:
   - {fileID: 1170527737}
   - {fileID: 1149354608}
   - {fileID: 2002463897}
-  - {fileID: 1472689060647616699}
-  - {fileID: 1291366531}
+  - {fileID: 408587459}

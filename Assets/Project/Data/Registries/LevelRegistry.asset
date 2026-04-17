@@ -21,6 +21,8 @@ MonoBehaviour:
     asset: Lobby
   - identifier: e0:machine_hall
     asset: Machine Hall
+  - identifier: e0:space_greenhouse
+    asset: Space Greenhouse
   - identifier: e0:outer_skeleton
     asset: Outer Skeleton
   - identifier: e0:illusion_room

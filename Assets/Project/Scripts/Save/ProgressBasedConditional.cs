@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Expedition0.Items.Data;
 using Expedition0.Save.Experimental;
 using Expedition0.Util;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace Expedition0.Save
@@ -12,9 +14,11 @@ namespace Expedition0.Save
     {
         public enum ConditionKind
         {
-            CompletedLevels,
-            InventoryItems,
-            TasksSolved,
+            [Tooltip("Completed levels (list of tags)")] CompletedLevels,
+            [Tooltip("Collected unique inventory items (list of tags)")] InventoryItems,
+            [Tooltip("Collected the specific inventory item (tag)")] InventoryItem,
+            [Tooltip("Number of solved tasks (int)")] TasksSolvedCount,
+            [Tooltip("Number of collected unique artifacts (int)")] ArtifactCount,
         }
 
         public enum ComparisonMode { IntComparison, SetComparison }
@@ -22,18 +26,28 @@ namespace Expedition0.Save
         [Header("Target")]
         public ConditionKind kind;
         
+        [Header("Int Conditions")]
         [Tooltip("Used for Int-based stats (Deaths, Tasks, etc)")]
         public int targetInt;
         public ProgressBasedConditionalComparison intOp;
 
+        [Header("String Set Conditions")]
         [Tooltip("Used for Set-based checks (Levels, Inventory)")]
+        // [ShowIf($"{nameof(kind)} == 0 || {nameof(kind)} == 1")]
         public List<string> targetStrings;
         public SetUtils.SetComparison setOp;
+
+        [Header("String Conditions")]
+        [Tooltip("Used for String-based checks (Single inventory item)")]
+        public string targetString;
 
         [Header("Outcome")]
         public T outcome;
 
         public bool IsSatisfied() => IsSatisfied(PlaythroughLifecycleManager.Instance.CurrentData);
+
+        private Func<string, ItemData.ItemType?> itemTypeGetter =
+            (itemId => PlaythroughLifecycleManager.Instance?.itemRegistry?.GetItem(itemId)?.itemType);
 
         public bool IsSatisfied(PlaythroughSaveData data)
         {
@@ -41,7 +55,11 @@ namespace Expedition0.Save
             {
                 ConditionKind.CompletedLevels => SetUtils.CompareSets(data.completedLevels, targetStrings, setOp),
                 ConditionKind.InventoryItems => SetUtils.CompareSets(data.inventory.Select(i => i.itemId), targetStrings, setOp),
-                ConditionKind.TasksSolved => CompareInts(data.taskSolvedCount, targetInt, intOp),
+                ConditionKind.InventoryItem => data.inventory.Any(item => item.itemId == targetString),
+                ConditionKind.TasksSolvedCount => CompareInts(data.taskSolvedCount, targetInt, intOp),
+                ConditionKind.ArtifactCount => CompareInts(
+                    data.CountUniqueItems(ItemData.ItemType.Artifact, itemTypeGetter), targetInt, intOp
+                ),
                 _ => false
             };
         }

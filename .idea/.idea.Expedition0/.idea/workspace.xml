@@ -4,85 +4,198 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b9dc62a-62e9-4981-bb24-6578aed24519" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/GamewideLifecycleManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/GamewideLifecycleManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/LevelLocalManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/LevelLocalManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughLifecycleManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughLifecycleManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/AssetRegistry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/AssetRegistry.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/ItemRegistry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/ItemRegistry.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/LevelRegistry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/LevelRegistry.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/MusicRegistry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Registries/MusicRegistry.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Util/SetUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Util/SetUtils.cs.meta" afterDir="false" />
+    <list default="true" id="0b9dc62a-62e9-4981-bb24-6578aed24519" name="Changes" comment="added new save system, lifecycle management etc">
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Command.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactPrefabSummoner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactPrefabSummoner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Expedition0/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Expedition0/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Expedition0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Expedition0/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Audio/Music/Prelude_of_the_Cosmos_intro.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Audio/Music/Prelude_of_the_Cosmos_intro.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Audio/Music/Prelude_of_the_Cosmos_loop.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Audio/Music/Prelude_of_the_Cosmos_loop.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Data/Audio/Music/Prelude of the Cosmos.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Data/Audio/Music/Prelude of the Cosmos.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Art/Animations/items/Pickup.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Art/Animations/items/Pickup.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Art/Models/levels/OldTV.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Art/Models/levels/OldTV.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Data/Items/Artifacts/ArtifactCrystal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Data/Items/Artifacts/ArtifactCrystal.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Data/Items/Artifacts/ArtifactDisk.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Data/Items/Artifacts/ArtifactDisk.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Data/Items/Artifacts/ArtifactRetranslator.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Data/Items/Artifacts/ArtifactRetranslator.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Data/Items/Utilities/Microphone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Data/Items/Utilities/Microphone.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Data/Items/Weapons/Blaster.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Data/Items/Weapons/Blaster.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/misc/Elevator_EndLevel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/misc/Elevator_EndLevel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/misc/Elevator_StartLevel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/misc/Elevator_StartLevel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Artifact Retranslator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Artifact Retranslator.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Effects/ArtifactPickupEffect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Effects/ArtifactPickupEffect.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Data/Registries/LevelRegistry.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Data/Registries/LevelRegistry.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Characters/NPCs/Illusion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Characters/NPCs/Illusion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/lobby/lobby_ceiling_section.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/lobby/lobby_ceiling_section.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/machine/FireBig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/machine/FireBig.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/machine/FireSmall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/machine/FireSmall.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactCrystal_Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactCrystal_Pickup.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactDisk_Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactDisk_Pickup.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactRetranslator_Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/ArtifactRetranslator_Pickup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/XR/XR Origin (XR Health).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/XR/XR Origin (XR Health).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/Blaster_Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Items/Pickups/Blaster_Pickup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Starships/Station Pulsar Body.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Starships/Station Pulsar Body.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type1/task_1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type1/task_1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type1/task_2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type1/task_2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type1/task_3.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type1/task_3.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type1/task_4.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type1/task_4.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type3/task_3_1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/Full/Type3/task_3_1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/frames/task_common_number_tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/frames/task_common_number_tile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/gates/task_3comb_elem_and.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/gates/task_3comb_elem_and.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/gates/task_3comb_elem_not.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/gates/task_3comb_elem_not.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/gates/task_3comb_elem_or.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/gates/task_3comb_elem_or.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/gates/task_3comb_elem_xor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/gates/task_3comb_elem_xor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_common_enter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_common_enter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_common_equal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_common_equal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_nonary_number_tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_nonary_number_tile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_nonary_operator_tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_nonary_operator_tile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_ternary_binop_tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_ternary_binop_tile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_ternary_number_tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_ternary_number_tile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_ternary_unop_tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/task_ternary_unop_tile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/wires/task_3comb_elem_invertor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/wires/task_3comb_elem_invertor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/wires/task_3comb_wire_corner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/wires/task_3comb_wire_corner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/wires/task_3comb_wire_full.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/wires/task_3comb_wire_full.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/wires/task_3comb_wire_half.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Task/elements/wires/task_3comb_wire_half.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/XR/XR Origin (XR Health+Inventory).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/XR/XR Origin (XR Health+Inventory).prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/PlaythroughSaveData.schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/PlaythroughSaveData.schema.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultGamewideSave.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultGamewideSave.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultPlaythroughSave.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultPlaythroughSave.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/perfectGamewideSave.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/perfectGamewideSave.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Core/EndCredits.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Core/EndCredits.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenuOld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenuOld.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Bridge Corridor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Bridge Corridor.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/IllusionRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/IllusionRoom.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/Lightmap-0_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/Lightmap-0_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/Lightmap-1_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/Lightmap-1_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/Lightmap-1_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/Lightmap-1_comp_light.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-0.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-0.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-1.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-1.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-10.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-10.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-11.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-11.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-12.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-12.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-13.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-13.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-14.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-14.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-15.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-15.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-2.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-2.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-3.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-3.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-4.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-4.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-5.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-5.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-6.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-6.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-7.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-7.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-8.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-8.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-9.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby/ReflectionProbe-9.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/Lightmap-0_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/Lightmap-0_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/Lightmap-0_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/Lightmap-0_comp_light.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/New Lighting Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/New Lighting Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-1.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-1.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-10.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-10.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-11.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-11.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-12.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-12.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-13.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-13.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-14.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-14.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-15.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-15.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-16.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-16.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-17.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-17.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-18.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-18.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-2.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-2.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-3.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-3.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-4.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-4.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-5.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-5.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-6.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-6.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-7.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-7.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-8.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-8.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-9.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default/ReflectionProbe-9.exr.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Audio/MusicChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Audio/MusicChanger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/CharacterAI/IllusionAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/CharacterAI/IllusionAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/CharacterAI/IllusionAltAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/CharacterAI/IllusionAltAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/SaveManagerMenuItems.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/SaveManagerMenuItems.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/Artifact.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/Artifact.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactStandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactStandController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactType.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Elevator/ElevatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/Elevator/ElevatorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Health/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Equipment/HandEquipment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Equipment/HandEquipment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Outer Skeleton.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Outer Skeleton.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/Lightmap-0_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/Lightmap-0_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/Lightmap-0_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/Lightmap-0_comp_shadowmask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-0.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-0.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-1.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-1.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-10.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-10.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-11.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-11.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-12.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-12.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-13.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-13.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-14.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-14.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-15.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-15.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-16.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-16.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-17.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-17.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-18.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-18.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-19.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-19.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-2.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-2.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-20.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-20.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-21.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-21.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-22.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-22.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-23.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-23.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-24.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-24.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-25.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-25.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-26.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-26.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-27.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-27.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-28.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-28.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-29.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-29.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-3.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-3.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-4.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-4.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-5.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-5.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-6.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-6.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-7.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-7.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-8.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-8.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-9.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse/ReflectionProbe-9.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Tasks.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Tasks/Task.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Tasks/Task.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Tasks/Task_2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Tasks/Task_2.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Tasks/Task_3.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Tasks/Task_3.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Tasks/Task_test.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Tasks/Task_test.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/PrefabSummoner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Environment/PrefabSummoner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Core/ItemPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Core/ItemPickup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Data/ItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Data/ItemData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryWheel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryWheel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Items/ItemsPickup/ArtifactPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Items/ItemsPickup/ArtifactPickup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/Credits/CreditsSceneChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/Credits/CreditsSceneChanger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/MainMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/SoundTestController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/MainMenu/SoundTestController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/ExpeditionBaseSaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/ExpeditionBaseSaveData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/GamewideSaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/GamewideSaveData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/NewSaveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/NewSaveSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/LevelLocalManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/LevelLocalManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughLifecycleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughLifecycleManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughSaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Experimental/PlaythroughSaveData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/GameProgressEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/GameProgressEvent.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditional.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditional.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditionalMultiSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditionalMultiSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditionalResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressBasedConditionalResolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Save/ProgressUpdater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/SaveManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/SaveManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Tests.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Tests/SaveManagerTester.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Save/Tests/SaveManagerTester.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/View/LogicTaskView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/View/LogicTaskView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sandbox/IllusionExperiment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sandbox/IllusionExperiment.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sandbox/Music Experiments.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sandbox/Music Experiments.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sandbox/TaskExperiments.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sandbox/TaskExperiments.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,6 +220,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/6000.2.7f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.render-pipelines.core/Editor/Camera/CameraUI.Environment.Drawers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vadim/Documents/Labs/Expedition0/Assets/Project/Prefabs/Environment/misc/Elevator_Tall_EndLevel.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultGamewideSave.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultPlaythroughSave.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/perfectGamewideSave.json" root0="FORCE_HIGHLIGHTING" />
@@ -116,7 +230,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Equipment/HandEquipment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryWheel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/ItemsPickup/ArtifactPickup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/ItemsPickup/ArtifactPickup.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -201,7 +315,9 @@
       <workItem from="1776011213433" duration="1192000" />
       <workItem from="1776164395537" duration="31446000" />
       <workItem from="1776246268145" duration="22089000" />
-      <workItem from="1776335479315" duration="1651000" />
+      <workItem from="1776335479315" duration="14762000" />
+      <workItem from="1776373793189" duration="4015000" />
+      <workItem from="1776428827769" duration="1970000" />
     </task>
     <task id="LOCAL-00001" summary="added updated lobby location">
       <option name="closed" value="true" />
@@ -211,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776167595631</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added new save system, lifecycle management etc">
+      <option name="closed" value="true" />
+      <created>1776337439831</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776337439831</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,9 +349,21 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="added updated lobby location" />
-    <option name="LAST_COMMIT_MESSAGE" value="added updated lobby location" />
+    <MESSAGE value="added new save system, lifecycle management etc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new save system, lifecycle management etc" />
   </component>
 </project>

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Microphone
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Items.Data.ItemData
   itemId: e0:util_microphone
-  itemName: Microphone
+  itemName: "\u041C\u0438\u043A\u0440\u043E\u0444\u043E\u043D"
   isStackable: 0
   isConsumable: 0
+  itemType: 1
   pickupPrefab: {fileID: 448561883877099738, guid: 3a86e1ac482400741b7cbbbbe1334923, type: 3}
   heldPrefab: {fileID: 1392446083916913919, guid: fd87108344f84e04ba7a10ee42cddb82, type: 3}
   inventoryPrefab: {fileID: 1392446083916913919, guid: 1a39c24024540c44b8c41bd152773774, type: 3}

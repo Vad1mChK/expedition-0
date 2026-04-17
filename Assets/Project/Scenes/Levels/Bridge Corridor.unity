@@ -4617,6 +4617,7 @@ MonoBehaviour:
   levelId: e0:bridge_corridor
   completeLevelBeforeChange: 1
   autoUnlockThisLevelGamewide: 1
+  customRespawnPoint: {fileID: 0}
   onLevelInitialized:
     m_PersistentCalls:
       m_Calls:
@@ -6163,7 +6164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.data[0].kind
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2131406398601666644, guid: 6ead5eb1780533a4cb40abd8f251f65a, type: 3}
       propertyPath: lockedConditions.conditionalValues.Array.data[0].intOp

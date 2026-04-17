@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,7 @@ namespace Expedition0.Save.Experimental
         [SerializeField] private string levelId; // e.g., "e0:bridge_corridor"
         [SerializeField] private bool completeLevelBeforeChange;
         [SerializeField] private bool autoUnlockThisLevelGamewide;
+        [SerializeField] private Transform customRespawnPoint; // Optional
         
         [Header("Events")]
         [Tooltip("Triggered when this level starts and finds the Lifecycle Manager")]
@@ -25,6 +27,25 @@ namespace Expedition0.Save.Experimental
             {
                 // Subscribe a local method to the global "Before Change" event
                 PlaythroughLifecycleManager.Instance.onBeforeChangeScene.AddListener(OnManagerPreparingToLeave);
+                
+                
+                // 4. Register this scene and its start position
+                Vector3 pos;
+                Quaternion rot;
+                if (customRespawnPoint != null)
+                {
+                    pos = customRespawnPoint.position;
+                    rot = customRespawnPoint.rotation;
+                }
+                else
+                {
+                    // Fallback: Use the XROrigin's position exactly where it is when the scene loads
+                    // Assuming there is only one XR Origin in scene
+                    var origin = FindFirstObjectByType<XROrigin>();
+                    pos = origin != null ? origin.transform.position : Vector3.zero;
+                    rot = origin != null ? origin.transform.rotation : Quaternion.identity;
+                }
+                PlaythroughLifecycleManager.Instance.RegisterCurrentLevel(levelId, pos, rot);
             }
             else
             {

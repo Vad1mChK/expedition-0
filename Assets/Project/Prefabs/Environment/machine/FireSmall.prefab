@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 8500845237156545919}
   - component: {fileID: 6650351568800036110}
   - component: {fileID: 648242617119114072}
+  - component: {fileID: 8929497147592666903}
   m_Layer: 9
   m_Name: FireSmall
   m_TagString: Untagged
@@ -479,6 +480,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Environment.Fire.FireDamage
   areaDamagePerSecond: 10
   areaDamageDealInterval: 0.5
+--- !u!114 &8929497147592666903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7502514337544836305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3d22a10734ff59a110099a0a67056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Combat.Laser.LaserSurface
+  surfaceType: 3
+  bounceIntensity: 0.9
+  ior: 1.5
 --- !u!1 &7801311361927705277
 GameObject:
   m_ObjectHideFlags: 0

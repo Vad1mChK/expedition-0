@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Expedition0.Save;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Expedition0.Environment
     public class PrefabSummoner : MonoBehaviour
     {
         [Serializable]
-        private class PrefabSummonerEntry
+        protected class PrefabSummonerEntry
         {
             public GameObject prefab;
             public Transform transform;
@@ -19,7 +20,7 @@ namespace Expedition0.Environment
         }
 
         [Serializable]
-        private struct LifetimeMonitorEntry
+        protected struct LifetimeMonitorEntry
         {
             public GameObject gameObject;
             public float lifetimeLeft;
@@ -32,7 +33,7 @@ namespace Expedition0.Environment
         }
 
         [SerializeField] private Transform defaultTransform;
-        [SerializeField] private List<PrefabSummonerEntry> entriesToSummon = new();
+        [SerializeField] protected ProgressBasedConditionalResolver<List<PrefabSummonerEntry>> summonResolver = new();
         [SerializeField] private bool summonAllOnAwake;
         [SerializeField] private bool destroyAllOnDestroy = true;
 
@@ -45,38 +46,47 @@ namespace Expedition0.Environment
 
             if (summonAllOnAwake)
             {
-                SummonAll();
+                SummonAllResolved();
             }
         }
 
-        public void SummonAll()
+        public virtual void SummonAllResolved()
         {
-            for (int i = 0; i < entriesToSummon.Count; i++)
+            foreach (var entry in summonResolver.Resolve())
             {
-                SummonEntry(entriesToSummon[i]);
+                SummonEntry(entry);
+            }
+        }
+        
+        public virtual void SummonAllDefault()
+        {
+            foreach (var entry in summonResolver.defaultValue)
+            {
+                SummonEntry(entry);
             }
         }
 
-        public void SummonEntryByIndex(int idx)
+        public void SummonDefaultEntryByIndex(int idx)
         {
+            var entriesToSummon = summonResolver.defaultValue;
+            
             if (idx < 0 || idx >= entriesToSummon.Count)
                 return;
-
             SummonEntry(entriesToSummon[idx]);
         }
 
-        private void SummonEntry(PrefabSummonerEntry entry)
+        protected GameObject SummonEntry(PrefabSummonerEntry entry)
         {
             if (entry == null || entry.prefab == null)
             {
                 Debug.LogWarning("PrefabSummoner: Cannot summon a null prefab");
-                return;
+                return null;
             }
 
             if (entry.hasLifetime && entry.lifetime <= 0f)
             {
                 Debug.LogWarning($"PrefabSummoner: {entry.prefab.name} has zero or negative lifetime; will not be summoned");
-                return;
+                return null;
             }
 
             Transform summonTransform = entry.transform != null ? entry.transform : defaultTransform;
@@ -93,6 +103,8 @@ namespace Expedition0.Environment
                 _lifetimeMonitorList.Add(new LifetimeMonitorEntry(go, entry.lifetime));
                 EnsureMonitoring();
             }
+
+            return go;
         }
 
         private void EnsureMonitoring()
@@ -152,7 +164,7 @@ namespace Expedition0.Environment
                     var entry = _lifetimeMonitorList[i];
 
                     // In case someone destroyed it externally:
-                    if (entry.gameObject == null)
+                    if (!entry.gameObject)
                     {
                         StopMonitoringAt(i, destroy: false);
                         continue;

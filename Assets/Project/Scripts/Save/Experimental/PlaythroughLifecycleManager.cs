@@ -17,11 +17,16 @@ namespace Expedition0.Save.Experimental
 
         [Header("Registries")]
         public LevelRegistry levelRegistry;
+        public ItemRegistry itemRegistry;
 
         [Header("State")]
         [SerializeField] private PlaythroughSaveData _currentData;
         public PlaythroughSaveData CurrentData => _currentData;
-
+        
+        private string _currentLevelId;
+        private Vector3 _respawnPosition;
+        private Quaternion _respawnRotation;
+        
         private void Awake()
         {
             if (Instance != null)
@@ -41,13 +46,20 @@ namespace Expedition0.Save.Experimental
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
+        
+        public void RegisterCurrentLevel(string id, Vector3 pos, Quaternion rot)
+        {
+            _currentLevelId = id;
+            _respawnPosition = pos;
+            _respawnRotation = rot;
+        }
 
         public void LoadLevel(string levelId)
         {
             string sceneName = levelRegistry.GetItem(levelId);
             if (string.IsNullOrEmpty(sceneName))
             {
-                Debug.LogError($"Respawn failed: Level ID {levelId} not found in registry.");
+                Debug.LogError($"[<b>PlaythroughLifecycleManager</b>] LoadLevel: Failed. Level ID {levelId} not found in registry.");
                 return;
             }
 
@@ -58,7 +70,17 @@ namespace Expedition0.Save.Experimental
         public void LoadRespawnLevel()
         {
             string respawnLevelId = _currentData.respawnLevel;
-            LoadLevel(respawnLevelId);
+            
+            ResetHealthAndIncrementDeath();
+            if (_currentLevelId == respawnLevelId)
+            {
+                Debug.Log("[<b>PlaythroughLifecycleManager</b>] LoadRespawnLevel: Same scene respawn. Warping player.");
+                WarpPlayerWithinSameLevel();
+            }
+            else
+            {
+                LoadLevel(respawnLevelId);
+            }
         }
 
         public void ResetHealthAndIncrementDeath()
@@ -75,6 +97,7 @@ namespace Expedition0.Save.Experimental
 
         public void SetRespawnLevel(string levelId)
         {
+            Debug.Log($"[<b>PlaythroughLifecycleManager</b>] Current respawn level set to {levelId}");
             _currentData.respawnLevel = levelId;
         }
 
@@ -87,6 +110,18 @@ namespace Expedition0.Save.Experimental
         {
             NewSaveSystem.DeletePlaythrough();
             _currentData = PlaythroughSaveData.Default;
+        }
+        
+        private void WarpPlayerWithinSameLevel()
+        {
+            // Assuming there is only one XR Origin in scene
+            var origin = FindFirstObjectByType<XROrigin>();
+            if (origin != null)
+            {
+                // Move the whole rig back to the saved coordinates
+                origin.transform.position = _respawnPosition;
+                origin.transform.rotation = _respawnRotation;
+            }
         }
 
         private void BeforeChangeScene()

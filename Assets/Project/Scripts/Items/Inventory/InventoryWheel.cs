@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using Expedition0.Items.Data;
 using Expedition0.Items.Inventory;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Expedition0.Items.UI
 {
@@ -16,6 +18,9 @@ namespace Expedition0.Items.UI
         [SerializeField] private float activeScale = 1.0f;
         [SerializeField] private float angleStepDeg = 25f;
         [SerializeField] private float radius = 0.15f;
+        
+        [Header("Text")]
+        [SerializeField] private TMP_Text itemNameTextElement;
 
         private readonly Dictionary<string, GameObject> _holograms = new();
         private int _selectedIndex = 0;
@@ -25,6 +30,12 @@ namespace Expedition0.Items.UI
         public void MoveSelection(int delta)
         {
             _selectedIndex = inventory.WrapIndex(_selectedIndex + delta);
+            
+            // Set text to name of item
+            if (TryGetSelectedItemData(out var data))
+            {
+                UpdateText(data.itemName);
+            }
         }
 
         private void Update()
@@ -78,6 +89,8 @@ namespace Expedition0.Items.UI
                         var holo = Instantiate(data.inventoryPrefab, transform, false);
                         _holograms[id] = holo;
                         if (forceSnap) holo.transform.localScale = Vector3.zero;
+                        
+                        // UpdateText(data.itemName);
                     }
                 }
             }
@@ -107,6 +120,11 @@ namespace Expedition0.Items.UI
 
             Debug.LogWarning($"[InventoryWheel] Item {itemId} not found in ordered list.");
             return false;
+        }
+
+        private void UpdateText(string text)
+        {
+            if (itemNameTextElement) itemNameTextElement.text = text;
         }
     }
 }

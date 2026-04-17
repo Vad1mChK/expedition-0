@@ -2754,6 +2754,7 @@ MonoBehaviour:
   levelId: e0:title_screen
   completeLevelBeforeChange: 0
   autoUnlockThisLevelGamewide: 0
+  customRespawnPoint: {fileID: 0}
   onLevelInitialized:
     m_PersistentCalls:
       m_Calls: []
@@ -5240,7 +5241,7 @@ Transform:
   m_GameObject: {fileID: 861456220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.83349, y: 3.43568, z: 8.96825}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10601,6 +10602,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   levelRegistry: {fileID: 11400000, guid: e12ec9aa35fe0944e8bce5c4c76abbc3, type: 2}
+  itemRegistry: {fileID: 11400000, guid: 9dab84461e2e8ac46b314feca81d1d4b, type: 2}
   _currentData:
     saveVersion: 0
     inventory: []
@@ -10611,7 +10613,6 @@ MonoBehaviour:
     enemyDefeatedCount: 0
     taskSolvedCount: 0
     taskMistakeCount: 0
-    artifactCount: 0
 --- !u!4 &1906266002
 Transform:
   m_ObjectHideFlags: 0
@@ -10621,7 +10622,7 @@ Transform:
   m_GameObject: {fileID: 1906266000}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.65109, y: 2.02222, z: 1.29537}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

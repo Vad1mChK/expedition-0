@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: ArtifactCrystal
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Items.Data.ItemData
   itemId: e0:artifact_crystal
-  itemName: Stabilization Crystal
+  itemName: "\u041A\u0440\u0438\u0441\u0442\u0430\u043B\u043B \u0441\u0442\u0430\u0431\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u0438"
   isStackable: 0
   isConsumable: 0
+  itemType: 0
   pickupPrefab: {fileID: 5383061582529781563, guid: eeb7bf4b950286a4c8ee934348a1b69b, type: 3}
   heldPrefab: {fileID: 2910889150292609614, guid: d8756909b1f2e2940b2c5399aa1de28d, type: 3}
   inventoryPrefab: {fileID: 2915499952842196268, guid: f3a5e0284d148c04da6f3687987dce56, type: 3}

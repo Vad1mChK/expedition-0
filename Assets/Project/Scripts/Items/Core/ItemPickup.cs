@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Expedition0.Items.Data;
 using Expedition0.Items.Inventory;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Expedition0.Items.Core
@@ -13,6 +14,9 @@ namespace Expedition0.Items.Core
         [SerializeField] private ItemData data;
         [SerializeField] private XRGrabInteractable _interactable;
         [SerializeField] private Outline _outline;
+        [Header("Events")]
+        [SerializeField] protected UnityEvent onAcquire;
+        [SerializeField] public UnityEvent onBeforeDestroy;
 
         private void Awake()
         {
@@ -29,6 +33,8 @@ namespace Expedition0.Items.Core
 
         protected virtual void OnPickedUp(SelectEnterEventArgs args)
         {
+            onAcquire?.Invoke();
+            
             var manager = InventoryManager.Instance != null
                 ? InventoryManager.Instance
                 : FindFirstObjectByType<InventoryManager>();
@@ -39,6 +45,11 @@ namespace Expedition0.Items.Core
                 return;
 
             Destroy(gameObject);
+        }
+        
+        protected virtual void OnDestroy()
+        {
+            onBeforeDestroy?.Invoke();
         }
     }
 }

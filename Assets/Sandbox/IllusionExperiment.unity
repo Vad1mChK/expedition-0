@@ -624,6 +624,7 @@ MonoBehaviour:
   levelId: e0:experiment
   completeLevelBeforeChange: 0
   autoUnlockThisLevelGamewide: 0
+  customRespawnPoint: {fileID: 0}
   onLevelInitialized:
     m_PersistentCalls:
       m_Calls: []
@@ -1843,6 +1844,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   levelRegistry: {fileID: 11400000, guid: e12ec9aa35fe0944e8bce5c4c76abbc3, type: 2}
+  itemRegistry: {fileID: 0}
   _currentData:
     saveVersion: 0
     inventory: []
@@ -1853,7 +1855,6 @@ MonoBehaviour:
     enemyDefeatedCount: 0
     taskSolvedCount: 0
     taskMistakeCount: 0
-    artifactCount: 0
 --- !u!4 &2015029654
 Transform:
   m_ObjectHideFlags: 0
@@ -4655,7 +4656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8546402374716342553, guid: 55688878c899dc54385b2093a3afed66, type: 3}
       propertyPath: onKiss.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SummonEntryByIndex
+      value: SummonDefaultEntryByIndex
       objectReference: {fileID: 0}
     - target: {fileID: 8546402374716342553, guid: 55688878c899dc54385b2093a3afed66, type: 3}
       propertyPath: onKiss.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName

@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419672240484446117}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -367,6 +367,7 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
+  interactable: {fileID: 0}
   initialValue: 0
   spriteRenderer: {fileID: 6943451361025498435}
   initialDigitSprites:
@@ -438,7 +439,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8352734706778540492}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
