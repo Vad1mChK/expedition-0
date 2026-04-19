@@ -52,7 +52,7 @@ MonoBehaviour:
   onTriggerReleased:
     m_PersistentCalls:
       m_Calls: []
-  deviceName: "\u041C\u0438\u043A\u0440\u043E\u0444\u043E\u043D (Realtek(R) Audio)"
+  deviceName: 
   sampleRate: 48000
   maxRecordingSeconds: 20
   minRecordingMilliseconds: 200
@@ -84,6 +84,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Audio.MicrophoneProcessingController
   microphoneHeld: {fileID: 7480202052991423286}
+  commandClient: {fileID: 0}
+  commandExecutor: {fileID: 0}
+  levelLocalManager: {fileID: 0}
+  mainMixer: {fileID: 24100000, guid: fb671beecab89b94f83a89ae0faeb972, type: 2}
 --- !u!1 &2269246781861951329
 GameObject:
   m_ObjectHideFlags: 0

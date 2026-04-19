@@ -552,7 +552,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 415386373288992897, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
       propertyPath: m_Name
-      value: TaskHintClient
+      value: TaskHintClient_0
       objectReference: {fileID: 0}
     - target: {fileID: 1623443378021539085, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
       propertyPath: m_LocalScale.x
@@ -664,6 +664,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1623443378021539085, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
   m_PrefabInstance: {fileID: 213557353}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &213557355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4271990646877056667, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
+  m_PrefabInstance: {fileID: 213557353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405fac0b2bcf4f029fa1cd166d0637fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Tasks.Experimental.Hint.HintClient
 --- !u!1001 &354492660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1331,12 +1342,40 @@ PrefabInstance:
       propertyPath: vfx
       value: 
       objectReference: {fileID: 868499160}
+    - target: {fileID: 959701016022857855, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 959701016022857855, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 959701016022857855, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4891412392751585099, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4891412392751585099, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
       propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820839474564658671, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820839474564658671, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820839474564658671, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820839474564658671, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6012131739045938952, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
@@ -1358,6 +1397,22 @@ PrefabInstance:
     - target: {fileID: 6868285205131039851, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
       propertyPath: m_MotionControllerModeStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063646623688763858, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063646623688763858, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063646623688763858, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063646623688763858, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8102832089987446782, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1419,6 +1474,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1170445226}
   m_SourcePrefab: {fileID: 100100000, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+--- !u!114 &708317847 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1331974875629286459, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
+  m_PrefabInstance: {fileID: 708317846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0481b9a55cfe4c3999a6f025ac180b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Command.CommandResponseDisplay
 --- !u!4 &708317848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8102832089987446782, guid: 73f4a963cb8208447b1fb69fa43a537b, type: 3}
@@ -2021,6 +2087,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58437060909e439492d8e12e1db83532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Tasks.Experimental.NonaryEqualityTaskView
+--- !u!1001 &995737884
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2764769429104044149, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: hintTaskPairs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764769429104044149, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: hintTaskPairs.Array.data[0].taskView
+      value: 
+      objectReference: {fileID: 1365456518}
+    - target: {fileID: 2764769429104044149, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: hintTaskPairs.Array.data[1].taskView
+      value: 
+      objectReference: {fileID: 994132464}
+    - target: {fileID: 2764769429104044149, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: hintTaskPairs.Array.data[2].taskView
+      value: 
+      objectReference: {fileID: 129400208}
+    - target: {fileID: 2764769429104044149, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: hintTaskPairs.Array.data[0].hintClient
+      value: 
+      objectReference: {fileID: 2076556582}
+    - target: {fileID: 2764769429104044149, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: hintTaskPairs.Array.data[1].hintClient
+      value: 
+      objectReference: {fileID: 1294411812}
+    - target: {fileID: 2764769429104044149, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: hintTaskPairs.Array.data[2].hintClient
+      value: 
+      objectReference: {fileID: 213557355}
+    - target: {fileID: 5297051620332934520, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: responseDisplay
+      value: 
+      objectReference: {fileID: 708317847}
+    - target: {fileID: 5297051620332934520, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: levelLocalManager
+      value: 
+      objectReference: {fileID: 1216601594}
+    - target: {fileID: 6607203023491272594, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_Name
+      value: Command Client and Executor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.98698
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.83963
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30.26602
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999624121341212661, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8305e9fd2f25d5c41b7042070dc419e6, type: 3}
 --- !u!1 &1037217992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,7 +2758,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 415386373288992897, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
       propertyPath: m_Name
-      value: TaskHintClient
+      value: TaskHintClient_1
       objectReference: {fileID: 0}
     - target: {fileID: 1623443378021539085, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
       propertyPath: m_LocalScale.x
@@ -2715,6 +2874,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1623443378021539085, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
   m_PrefabInstance: {fileID: 1294411810}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1294411812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4271990646877056667, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
+  m_PrefabInstance: {fileID: 1294411810}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405fac0b2bcf4f029fa1cd166d0637fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Tasks.Experimental.Hint.HintClient
 --- !u!1 &1350285947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,6 +3144,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7781501411300023368, guid: e9c2860210777854eb986d9cd53fc6b4, type: 3}
   m_PrefabInstance: {fileID: 1365456516}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1365456518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1587024692053549039, guid: e9c2860210777854eb986d9cd53fc6b4, type: 3}
+  m_PrefabInstance: {fileID: 1365456516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58437060909e439492d8e12e1db83532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Tasks.Experimental.NonaryEqualityTaskView
 --- !u!1 &1431395322
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,7 +4506,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 415386373288992897, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
       propertyPath: m_Name
-      value: TaskHintClient
+      value: TaskHintClient_2
       objectReference: {fileID: 0}
     - target: {fileID: 1623443378021539085, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
       propertyPath: m_LocalScale.x
@@ -4382,7 +4563,7 @@ PrefabInstance:
     - target: {fileID: 4271990646877056667, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
       propertyPath: taskView
       value: 
-      objectReference: {fileID: 994132464}
+      objectReference: {fileID: 1365456518}
     - target: {fileID: 4271990646877056667, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
       propertyPath: leftInterfaceType
       value: 1
@@ -4437,13 +4618,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1623443378021539085, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
   m_PrefabInstance: {fileID: 2076556580}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2076556582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4271990646877056667, guid: ae3da35ded4f4524997d43fcfe36f2f9, type: 3}
+  m_PrefabInstance: {fileID: 2076556580}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405fac0b2bcf4f029fa1cd166d0637fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Tasks.Experimental.Hint.HintClient
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 819406676}
   - {fileID: 1216601593}
   - {fileID: 55452170}
-  - {fileID: 819406676}
+  - {fileID: 995737884}
   - {fileID: 1842442928}
   - {fileID: 58249944}
   - {fileID: 1535268313}

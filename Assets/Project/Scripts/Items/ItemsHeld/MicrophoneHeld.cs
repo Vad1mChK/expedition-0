@@ -35,6 +35,7 @@ namespace Expedition0.Items.ItemsHeld
 
         [Header("Recording")]
         [Tooltip("Optional explicit device name. If empty, first device is used.")]
+        // For development: Микрофон (Realtek(R) Audio)
         [SerializeField] private string deviceName;
         [Min(8000)] [SerializeField] private int sampleRate = 16000;
         [Min(1)] [SerializeField] private int maxRecordingSeconds = 10;
@@ -48,16 +49,16 @@ namespace Expedition0.Items.ItemsHeld
         [SerializeField] private Renderer[] statusRenderers;
         [SerializeField] private string emissionColorProperty = "_EmissionColor";
 
-        [ColorUsage(true, true)] [SerializeField] 
-            private Color offColor = Color.black;
-        [ColorUsage(true, true)] [SerializeField] 
-            private Color recordingColor = new Color(0.2f, 0.8f, 2.0f, 1f);
-        [ColorUsage(true, true)] [SerializeField] 
-            private Color communicatingColor = new Color(2.0f, 0.8f, 0.2f, 1f);
-        [ColorUsage(true, true)] [SerializeField] 
-            private Color successColor = new Color(0.2f, 2.0f, 0.2f, 1f);
-        [ColorUsage(true, true)] [SerializeField] 
-            private Color failureColor = new Color(2.0f, 0.2f, 0.2f, 1f);
+        [SerializeField, ColorUsage(false, true)]
+            private Color offColor = new Color(0.0627f, 0.0627f, 0.0627f) * 2f;
+        [SerializeField, ColorUsage(false, true)]
+            private Color recordingColor = new Color(0.0274f, 0.5451f, 0.7882f) * 2f;
+        [SerializeField, ColorUsage(false, true)]
+            private Color communicatingColor = new Color(0.9607f, 0.4901f, 0.1373f) * 2f;
+        [SerializeField, ColorUsage(false, true)]
+            private Color successColor = new Color(0.5804f, 0.7373f, 0.0549f) * 2f;
+        [SerializeField, ColorUsage(false, true)]
+            private Color failureColor = new Color(0.8392f, 0f, 0.1176f) * 2f;
 
         [Tooltip("Pulse speed for Recording state.")]
         [Min(0f)] [SerializeField] private float recordingPulseHz = 2.0f;

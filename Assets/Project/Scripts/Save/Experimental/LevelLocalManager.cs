@@ -19,6 +19,8 @@ namespace Expedition0.Save.Experimental
         public UnityEvent<string> onLevelInitialized;
         // public UnityEvent onBeforeChangeScene;
 
+        public string LevelId => levelId;
+
         private void Start()
         {
             onLevelInitialized?.Invoke(levelId);

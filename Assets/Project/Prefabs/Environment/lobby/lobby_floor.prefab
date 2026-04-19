@@ -274,15 +274,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Color.b
-      value: 0.11764706
+      value: 0.4980392
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Color.r
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Intensity
@@ -290,31 +290,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightColor.b
-      value: 0.11764706
+      value: 0.4980392
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightColor.r
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightIntensity
       value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
+      propertyPath: emissionColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionColor.b
-      value: 0.11764706
+      value: 0.4980392
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionColor.r
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionIntensity
@@ -384,15 +388,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Color.b
-      value: 0.11764706
+      value: 0.4980392
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Color.r
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Intensity
@@ -400,31 +404,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightColor.b
-      value: 0.11764706
+      value: 0.4980392
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightColor.r
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightIntensity
       value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
+      propertyPath: emissionColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionColor.b
-      value: 0.11764706
+      value: 0.4980392
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionColor.r
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionIntensity
@@ -494,15 +502,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Color.b
-      value: 0.11764706
+      value: 0.4980392
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Color.r
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1785535001430941949, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: m_Intensity
@@ -510,31 +518,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightColor.b
-      value: 0.11764706
+      value: 0.4980392
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightColor.r
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: lightIntensity
       value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
+      propertyPath: emissionColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionColor.b
-      value: 0.11764706
+      value: 0.4980392
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionColor.r
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7530888323253573901, guid: a949d269c723d33449a279523cc1ea4a, type: 3}
       propertyPath: emissionIntensity

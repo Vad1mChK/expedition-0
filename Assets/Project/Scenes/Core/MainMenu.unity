@@ -408,9 +408,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1501730886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &78034156
@@ -457,10 +457,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
-        m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
-        m_MethodName: ChangeMusicVolume
-        m_Mode: 4
+      - m_Target: {fileID: 2054651276}
+        m_TargetAssemblyTypeName: Expedition0.MainMenu.AudioSettingsView, Assembly-CSharp
+        m_MethodName: DecreaseMusic
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -599,9 +599,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1101976181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1050, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 240, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &155227699
@@ -624,10 +624,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100%
+  m_text: 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15eb0b33b23fbec4c88ec33d30d99808, type: 2}
-  m_sharedMaterial: {fileID: 2699421631434261227, guid: 15eb0b33b23fbec4c88ec33d30d99808, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9796846362635ba4d8616b8abbc03719, type: 2}
+  m_sharedMaterial: {fileID: 6666282869185189082, guid: 9796846362635ba4d8616b8abbc03719, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -651,15 +651,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 96
+  m_fontSizeBase: 96
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1007,9 +1007,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1501730886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1050, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 240, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191814414
@@ -1032,10 +1032,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100%
+  m_text: 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15eb0b33b23fbec4c88ec33d30d99808, type: 2}
-  m_sharedMaterial: {fileID: 2699421631434261227, guid: 15eb0b33b23fbec4c88ec33d30d99808, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9796846362635ba4d8616b8abbc03719, type: 2}
+  m_sharedMaterial: {fileID: 6666282869185189082, guid: 9796846362635ba4d8616b8abbc03719, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1059,15 +1059,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 96
+  m_fontSizeBase: 96
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1277,9 +1277,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1681345643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216034492
@@ -1326,10 +1326,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
-        m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
-        m_MethodName: ChangeMasterVolume
-        m_Mode: 4
+      - m_Target: {fileID: 2054651276}
+        m_TargetAssemblyTypeName: Expedition0.MainMenu.AudioSettingsView, Assembly-CSharp
+        m_MethodName: DecreaseMaster
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1727,7 +1727,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
         m_MethodName: ChangeSfxVolume
         m_Mode: 4
@@ -1887,10 +1887,10 @@ RectTransform:
   - {fileID: 796936640}
   m_Father: {fileID: 2131374541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -548}
-  m_SizeDelta: {x: 1376, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271761159
 MonoBehaviour:
@@ -1952,10 +1952,10 @@ RectTransform:
   - {fileID: 1628885541}
   m_Father: {fileID: 1407324999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 720, y: -382.40002}
+  m_SizeDelta: {x: 1376, y: 342.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &282915508
 MonoBehaviour:
@@ -2942,10 +2942,10 @@ RectTransform:
   - {fileID: 1955930405}
   m_Father: {fileID: 282915507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 96}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 688, y: -59.199997}
+  m_SizeDelta: {x: 1376, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481035869
 MonoBehaviour:
@@ -3005,9 +3005,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1101976181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 526, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &572308726
@@ -3142,9 +3142,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1681345643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1302, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &608804548
@@ -3191,10 +3191,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
-        m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
-        m_MethodName: ChangeMasterVolume
-        m_Mode: 4
+      - m_Target: {fileID: 2054651276}
+        m_TargetAssemblyTypeName: Expedition0.MainMenu.AudioSettingsView, Assembly-CSharp
+        m_MethodName: IncreaseMaster
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3274,10 +3274,10 @@ RectTransform:
   - {fileID: 1308413416}
   m_Father: {fileID: 282915507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 96}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 688, y: -171.2}
+  m_SizeDelta: {x: 1376, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646476670
 MonoBehaviour:
@@ -3338,9 +3338,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1101976181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668198183
@@ -3387,10 +3387,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
-        m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
-        m_MethodName: ChangeSfxVolume
-        m_Mode: 4
+      - m_Target: {fileID: 2054651276}
+        m_TargetAssemblyTypeName: Expedition0.MainMenu.AudioSettingsView, Assembly-CSharp
+        m_MethodName: DecreaseSfx
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3606,7 +3606,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
         m_MethodName: ChangeMasterVolume
         m_Mode: 4
@@ -4389,9 +4389,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 481035868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 342.10748, y: -48}
   m_SizeDelta: {x: 684.21497, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764833537
@@ -4526,9 +4526,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 271761158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1302, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796936641
@@ -4575,10 +4575,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
-        m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
-        m_MethodName: ChangeVoiceVolume
-        m_Mode: 4
+      - m_Target: {fileID: 2054651276}
+        m_TargetAssemblyTypeName: Expedition0.MainMenu.AudioSettingsView, Assembly-CSharp
+        m_MethodName: IncreaseVoice
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4707,7 +4707,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
         m_MethodName: ChangeMusicVolume
         m_Mode: 4
@@ -5099,9 +5099,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1501730886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 526, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &858582411
@@ -5465,7 +5465,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
         m_MethodName: ChangeMasterVolume
         m_Mode: 4
@@ -5730,7 +5730,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
         m_MethodName: ChangeVoiceVolume
         m_Mode: 4
@@ -5989,7 +5989,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
         m_MethodName: ChangeVoiceVolume
         m_Mode: 4
@@ -6072,9 +6072,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1101976181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1302, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &991670277
@@ -6121,10 +6121,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
-        m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
-        m_MethodName: ChangeSfxVolume
-        m_Mode: 4
+      - m_Target: {fileID: 2054651276}
+        m_TargetAssemblyTypeName: Expedition0.MainMenu.AudioSettingsView, Assembly-CSharp
+        m_MethodName: IncreaseSfx
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6621,9 +6621,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 271761158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1037227187
@@ -6670,10 +6670,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
-        m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
-        m_MethodName: ChangeVoiceVolume
-        m_Mode: 4
+      - m_Target: {fileID: 2054651276}
+        m_TargetAssemblyTypeName: Expedition0.MainMenu.AudioSettingsView, Assembly-CSharp
+        m_MethodName: DecreaseVoice
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7181,10 +7181,10 @@ RectTransform:
   - {fileID: 991670276}
   m_Father: {fileID: 2131374541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -396}
-  m_SizeDelta: {x: 1376, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101976182
 MonoBehaviour:
@@ -7244,9 +7244,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1681345643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 526, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106084980
@@ -7757,9 +7757,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1501730886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1302, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280451952
@@ -7806,10 +7806,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
-        m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
-        m_MethodName: ChangeMusicVolume
-        m_Mode: 4
+      - m_Target: {fileID: 2054651276}
+        m_TargetAssemblyTypeName: Expedition0.MainMenu.AudioSettingsView, Assembly-CSharp
+        m_MethodName: IncreaseMusic
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7888,10 +7888,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1407324999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 720, y: -105.600006}
+  m_SizeDelta: {x: 1376, y: 147.20001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293778318
 MonoBehaviour:
@@ -8030,9 +8030,9 @@ RectTransform:
   - {fileID: 447523685}
   m_Father: {fileID: 646476669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1027.63, y: -48}
   m_SizeDelta: {x: 696.74005, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308413417
@@ -8289,7 +8289,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
         m_MethodName: ChangeMusicVolume
         m_Mode: 4
@@ -8554,7 +8554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1407324999
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8572,10 +8572,10 @@ RectTransform:
   - {fileID: 1515748397}
   m_Father: {fileID: 1150170557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 640}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 784, y: -1138}
+  m_SizeDelta: {x: 1440, y: 640}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1407325000
 MonoBehaviour:
@@ -8846,9 +8846,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 271761158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1050, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 240, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488873377
@@ -8871,10 +8871,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100%
+  m_text: 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15eb0b33b23fbec4c88ec33d30d99808, type: 2}
-  m_sharedMaterial: {fileID: 2699421631434261227, guid: 15eb0b33b23fbec4c88ec33d30d99808, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9796846362635ba4d8616b8abbc03719, type: 2}
+  m_sharedMaterial: {fileID: 6666282869185189082, guid: 9796846362635ba4d8616b8abbc03719, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8898,15 +8898,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 96
+  m_fontSizeBase: 96
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9121,10 +9121,10 @@ RectTransform:
   - {fileID: 1280451951}
   m_Father: {fileID: 2131374541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -244}
-  m_SizeDelta: {x: 1376, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1501730887
 MonoBehaviour:
@@ -9320,10 +9320,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1407324999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 720, y: -596.8}
+  m_SizeDelta: {x: 1376, y: 22.400003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1515748398
 MonoBehaviour:
@@ -9578,10 +9578,10 @@ RectTransform:
   - {fileID: 175099008}
   m_Father: {fileID: 282915507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 96}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 688, y: -283.2}
+  m_SizeDelta: {x: 1376, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628885542
 MonoBehaviour:
@@ -9821,6 +9821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1658526036}
   - component: {fileID: 1658526035}
+  - component: {fileID: 1658526037}
   m_Layer: 0
   m_Name: Music Manager
   m_TagString: Untagged
@@ -9866,6 +9867,19 @@ Transform:
   - {fileID: 724071312}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1658526037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658526034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4e4bbc6b4743c6a6bd8fe720e79221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Audio.AudioVolumeInitializer
+  audioMixer: {fileID: 24100000, guid: fb671beecab89b94f83a89ae0faeb972, type: 2}
 --- !u!1 &1681345642
 GameObject:
   m_ObjectHideFlags: 0
@@ -9901,10 +9915,10 @@ RectTransform:
   - {fileID: 608804547}
   m_Father: {fileID: 2131374541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -92}
-  m_SizeDelta: {x: 1376, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1681345644
 MonoBehaviour:
@@ -10105,9 +10119,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 646476669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 339.63, y: -48}
   m_SizeDelta: {x: 679.26, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818356517
@@ -10465,9 +10479,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1681345643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1050, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 240, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893564265
@@ -10490,10 +10504,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100%
+  m_text: 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15eb0b33b23fbec4c88ec33d30d99808, type: 2}
-  m_sharedMaterial: {fileID: 2699421631434261227, guid: 15eb0b33b23fbec4c88ec33d30d99808, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9796846362635ba4d8616b8abbc03719, type: 2}
+  m_sharedMaterial: {fileID: 6666282869185189082, guid: 9796846362635ba4d8616b8abbc03719, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10517,15 +10531,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 96
+  m_fontSizeBase: 96
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -10710,7 +10724,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054651273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSettingsManager, Assembly-CSharp
         m_MethodName: ChangeSfxVolume
         m_Mode: 4
@@ -11089,9 +11103,9 @@ RectTransform:
   - {fileID: 291742696}
   m_Father: {fileID: 481035868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1030.1074, y: -48}
   m_SizeDelta: {x: 691.78503, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955930406
@@ -11842,9 +11856,9 @@ GameObject:
   - component: {fileID: 2054651271}
   - component: {fileID: 2054651270}
   - component: {fileID: 2054651269}
-  - component: {fileID: 2054651273}
   - component: {fileID: 2054651274}
   - component: {fileID: 2054651275}
+  - component: {fileID: 2054651276}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -11935,27 +11949,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1.5}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2054651273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054651268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d2a4e2e3f72b4a4a9bc1892f642b3f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioSettingsManager
-  audioMixer: {fileID: 24100000, guid: fb671beecab89b94f83a89ae0faeb972, type: 2}
-  masterVolumeParam: MasterVolume
-  musicVolumeParam: MusicVolume
-  voiceVolumeParam: VoiceVolume
-  sfxVolumeParam: SfxVolume
-  masterVolumeText: {fileID: 1893564265}
-  musicVolumeText: {fileID: 191814414}
-  voiceVolumeText: {fileID: 1488873377}
-  sfxVolumeText: {fileID: 155227699}
 --- !u!114 &2054651274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11998,6 +11991,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &2054651276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054651268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16df1ca04e82476681d0cc9dc03ec8e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.MainMenu.AudioSettingsView
+  audioMixer: {fileID: 24100000, guid: fb671beecab89b94f83a89ae0faeb972, type: 2}
+  volumeStep: 10
+  masterLabel: {fileID: 1893564265}
+  musicLabel: {fileID: 191814414}
+  sfxLabel: {fileID: 155227699}
+  voiceLabel: {fileID: 1488873377}
 --- !u!1 &2120843289
 GameObject:
   m_ObjectHideFlags: 0
@@ -12030,9 +12041,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 271761158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 526, y: -60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2120843291
@@ -12150,7 +12161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2131374541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12169,10 +12180,10 @@ RectTransform:
   - {fileID: 271761158}
   m_Father: {fileID: 1150170557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 784, y: -466}
-  m_SizeDelta: {x: 1440, y: 640}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 640}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131374542
 MonoBehaviour:
