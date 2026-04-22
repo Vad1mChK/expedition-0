@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b9dc62a-62e9-4981-bb24-6578aed24519" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/XR/XR Origin (XR Health).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/XR/XR Origin (XR Health).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Core/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Bridge Corridor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Bridge Corridor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Lobby_Default.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Machine Hall.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Outer Skeleton.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Outer Skeleton.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Levels/Space Greenhouse.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XR/XRGeneralSettingsPerBuildTarget.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/XRGeneralSettingsPerBuildTarget.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Json/TestTaskSerializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Json/TestTaskSerializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model/TestLogicNodes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model/TestLogicNodes.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model/TestTernaryMath.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model/TestTernaryMath.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model/TestTritExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model/TestTritExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Expedition0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Expedition0/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +27,46 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Vad1mChK&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Vad1mChK/expedition-0.git&quot;,
+    &quot;accountId&quot;: &quot;56d331b8-d289-4228-8b46-9493c445f73f&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/6000.2.7f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.render-pipelines.core/Editor/Camera/CameraUI.Environment.Drawers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultGamewideSave.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/defaultPlaythroughSave.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Resources/SaveSystem/perfectGamewideSave.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Json/TestTaskSerializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model/TestLogicNodes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model/TestTernaryMath.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Editor/Test/Tasks/Model/TestTritExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Environment/Artifacts/ArtifactStandController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Environment/PrefabSummoner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Core/ItemPickup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Equipment/HandEquipment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/Inventory/InventoryWheel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Items/ItemsPickup/ArtifactPickup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/Hint/HintDtos.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/Json/TaskSerializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/Model/LogicNodes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/Model/TernaryMath.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/Model/TernaryOperatorType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/Tasks/Experimental/Model/Trit.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
@@ -103,12 +146,36 @@
       <workItem from="1764750446158" duration="626000" />
       <workItem from="1764757482258" duration="1452000" />
       <workItem from="1764769110357" duration="420000" />
+      <workItem from="1776011213433" duration="1192000" />
+      <workItem from="1776164395537" duration="31446000" />
+      <workItem from="1776246268145" duration="22089000" />
+      <workItem from="1776335479315" duration="14762000" />
+      <workItem from="1776373793189" duration="4015000" />
+      <workItem from="1776428827769" duration="1970000" />
     </task>
+    <task id="LOCAL-00001" summary="added updated lobby location">
+      <option name="closed" value="true" />
+      <created>1776167595631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776167595631</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added new save system, lifecycle management etc">
+      <option name="closed" value="true" />
+      <created>1776337439831</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776337439831</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
@@ -116,7 +183,21 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="added updated lobby location" />
+    <MESSAGE value="added new save system, lifecycle management etc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new save system, lifecycle management etc" />
   </component>
 </project>

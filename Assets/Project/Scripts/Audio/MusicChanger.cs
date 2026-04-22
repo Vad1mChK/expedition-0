@@ -1,70 +1,73 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using Expedition0.Save;
+using Expedition0.Save.Experimental;
+using Expedition0.Save.Registries;
 
 namespace Expedition0.Audio
 {
     public class MusicChanger : MonoBehaviour
     {
-        [Serializable]
-        public class ConditionalTrack
-        {
-            public GameProgress progressConditions;
-            public int priority;                 // higher = wins
-            public MusicTrackAsset trackAsset;
-
-            public bool IsSatisfiedBy(GameProgress p) =>
-                (p & progressConditions) == progressConditions;
-        }
-
-        [SerializeField] private List<ConditionalTrack> conditionalTracks;
-        [SerializeField] private MusicTrackAsset defaultTrack;
+        [Header("Resolution")]
+        [SerializeField] private ProgressBasedConditionalResolver<string> musicResolver;
+        
+        [Header("Registry & Unlocking")]
+        [SerializeField] private MusicRegistry musicRegistry;
+        [SerializeField] private bool autoUnlockResolvedMusicGamewide = false;
 
         private static MusicTrackAsset _last;
 
         private void Start()
         {
-            Reevaluate(SaveManager.LoadProgress());
+            Reevaluate();
         }
 
-        // public so other systems can trigger it when flags change
-        public void Reevaluate(GameProgress progress)
+        /// <summary>
+        /// Resolves the correct track based on current playthrough progress.
+        /// </summary>
+        public void Reevaluate()
         {
-            MusicTrackAsset best = defaultTrack;
-            int bestPr = int.MinValue;
-
-            foreach (var c in conditionalTracks)
+            var bestIdentifier = musicResolver.Resolve();
+            if (bestIdentifier == null) return;
+            
+            if (autoUnlockResolvedMusicGamewide)
             {
-                if (c.trackAsset && c.IsSatisfiedBy(progress) && c.priority >= bestPr)
-                {
-                    best = c.trackAsset;
-                    bestPr = c.priority;
-                }
+                UnlockMusicById(bestIdentifier);
             }
-            SetMusicTrack(best);
+            
+            Debug.Log($"[<b>MusicChanger</b>] Best music ID for this level: {bestIdentifier}");
+            
+            var bestMusic = musicRegistry.GetItem(bestIdentifier);
+            if (bestMusic == null) return;
+            
+            SetMusicTrack(bestMusic);
         }
 
         public void SetMusicTrack(MusicTrackAsset trackAsset)
         {
-            if (_last == trackAsset) {
-                Debug.Log($"Track '{trackAsset.displayName}' is already playing, no need to change", this);
-                return;              // avoid needless restarts
-            }
+            if (_last == trackAsset) return; 
+
             _last = trackAsset;
-            Debug.Log($"Set new music track: '{trackAsset.displayName}'", this);
-            if (MusicPlayer.Instance) MusicPlayer.Instance.Play(trackAsset);
+            Debug.Log($"[<b>MusicChanger</b>] Switching music to: {trackAsset.displayName}");
+            
+            if (MusicPlayer.Instance) 
+                MusicPlayer.Instance.Play(trackAsset);
         }
 
-        public void FadeOutMusic()
+        /// <summary>
+        /// Explicitly unlocks a track in the Gamewide save file.
+        /// </summary>
+        public void UnlockMusicById(string musicId)
         {
-            if (MusicPlayer.Instance) MusicPlayer.Instance.FadeOutWithPause();
+            if (GamewideLifecycleManager.Instance != null)
+            {
+                GamewideLifecycleManager.Instance.UnlockMusic(musicId);
+            }
         }
 
-        public void FadeInMusic()
-        {
-            if (MusicPlayer.Instance) MusicPlayer.Instance.FadeInWithResume();
-        }
+        // --- Playback Controls ---
+
+        public void FadeOutMusic() => MusicPlayer.Instance?.FadeOutWithPause();
+        public void FadeInMusic() => MusicPlayer.Instance?.FadeInWithResume();
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void ResetLast() => _last = null;

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cecea96addde4399bd2c9557f13f2286, type: 3}
+  m_Name: MusicRegistry
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Save.Registries.MusicRegistry
+  assetEntries:
+  - identifier: e0:soviet_stars
+    asset: {fileID: 11400000, guid: 0626fa7dcf7a82c45b1010e853ab339b, type: 2}
+  - identifier: e0:soviet_satellite
+    asset: {fileID: 11400000, guid: 790b22199e269594db7d9d6efda54f97, type: 2}
+  - identifier: e0:prelude_of_the_cosmos
+    asset: {fileID: 11400000, guid: 252a4e92d30b3314c938b7d31f5f9075, type: 2}
+  - identifier: e0:whispers_in_the_shadows
+    asset: {fileID: 11400000, guid: 5793716d8ccfc174a9079cd2ea575634, type: 2}
+  - identifier: e0:guzheng_with_qipao
+    asset: {fileID: 11400000, guid: 94b824c78846f3d418f9fcdb5489cea5, type: 2}
+  - identifier: e0:red_pagoda
+    asset: {fileID: 11400000, guid: 63b875fce7661b448812b65d4e400845, type: 2}
+  - identifier: e0:dawn_over_shanghai
+    asset: {fileID: 11400000, guid: 620e68dd2c5f28f4282e222bfb34d1d8, type: 2}
+  - identifier: e0:shadows_in_the_city
+    asset: {fileID: 11400000, guid: da982578112e5644aa24e40bb21eec6c, type: 2}
+  - identifier: e0:veil_of_shadows
+    asset: {fileID: 11400000, guid: 10154bd082457324397eae85d994736b, type: 2}
+  - identifier: e0:cosmic_bamboo
+    asset: {fileID: 11400000, guid: 2f8edb763f7710f4aa7ebdd99cce60c8, type: 2}
+  - identifier: e0:rhythm_of_bamboo
+    asset: {fileID: 11400000, guid: 10f4072263786b0498184416b64abf36, type: 2}
+  - identifier: e0:waves_of_the_moon
+    asset: {fileID: 11400000, guid: d9e5cc6c5bb18964fb5b94bed8321912, type: 2}
+  - identifier: e0:moonlit_exploration
+    asset: {fileID: 11400000, guid: 67bb9d2b07007a449a1526c8868b7221, type: 2}
+  - identifier: e0:echoes_of_the_cosmos
+    asset: {fileID: 11400000, guid: 6560f76bfc9099c4ea5285d943ae79f2, type: 2}

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Combat.Laser.LaserBeam
   initialDamage: 10
   damageMode: 0
-  maxBounces: 1
+  maxBounces: 5
   maxDistance: 128
   nudgeDistance: 0.001
   hitLayers:
@@ -55,7 +55,7 @@ MonoBehaviour:
   updateEveryFrame: 1
   beamPrefab: {fileID: 8706075968059174047, guid: 9cbab7b8b61e3f74e8e81551d45b8baa, type: 3}
   beamWidth: 0.025
-  beamColor: {r: 2.9960785, g: 0, b: 0, a: 1}
+  beamColor: {r: 2.1185472, g: 0, b: 0, a: 1}
   hitEffectPrefab: {fileID: 4786917340008106900, guid: 7567025fbb4217c4aad7d515c7a6597e, type: 3}
-  persistentHitEffect: 0
+  persistentHitEffect: 1
   teleportThreshold: 1

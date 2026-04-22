@@ -219,10 +219,11 @@ namespace Expedition0.CharacterAI
             _agent.isStopped = true;
             Debug.Log("Attempting kiss");
 
-            if (doUpdateSaveAfterKiss)
-            {
-                SaveManager.SetCompleted(GameProgress.SeenIllusion);
-            }
+            // if (doUpdateSaveAfterKiss)
+            // {
+            //     SaveManager.SetCompleted(GameProgress.SeenIllusion);
+            // }
+            // TODO replace with achievement later
             
             onKiss?.Invoke();
             

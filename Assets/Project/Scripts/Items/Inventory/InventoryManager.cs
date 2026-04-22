@@ -1,93 +1,132 @@
 using System;
 using System.Collections.Generic;
-using Expedition0.Items.Core;
-using UnityEngine;
+using System.Linq;
 using Expedition0.Items.Data;
+using Expedition0.Save.Experimental;
+using Expedition0.Save.Registries;
+using UnityEngine;
 
 namespace Expedition0.Items.Inventory
 {
-    [Serializable]
-    public class InventoryEntry
+    public sealed class InventoryManager : MonoBehaviour
     {
-        public string id;
-        public int count;
-    }
+        public static InventoryManager Instance { get; private set; }
 
-    [Serializable]
-    public class InventorySaveData
-    {
-        public List<InventoryEntry> items = new List<InventoryEntry>();
-    }
-
-    public class InventoryManager : MonoBehaviour
-    {
-        [SerializeField] private List<ItemData> database;
-        [SerializeField] private Transform handPivot;
+        [SerializeField] private ItemRegistry itemRegistry;
         
-        private List<ItemData> _ownedItems = new List<ItemData>();
-        private int _currentIndex = 0;
-        private GameObject _spawnedHeldItem;
-        private ItemData _lastEquippedItem;
+        // This is our in-memory cache of the SaveData list for quick dictionary lookups
+        private readonly Dictionary<string, PlaythroughInventoryEntry> _itemsById = new();
+        private readonly List<string> _orderedIds = new();
 
-        public List<ItemData> OwnedItems => _ownedItems;
-        public int CurrentIndex => _currentIndex;
-        public bool HasItems => _ownedItems.Count > 0;
-        private ItemHeld _currentHeldScript; // Cache the component for performance
+        public event Action Changed;
+        public event Action<ItemData> ItemAdded;
 
-        public void AddItem(ItemData data)
+        public int DistinctItemCount => _orderedIds.Count;
+        public IReadOnlyList<string> OrderedItemIds => _orderedIds;
+
+        private void Awake()
         {
-            if (!_ownedItems.Contains(data))
+            if (Instance != null) { Destroy(gameObject); return; }
+            Instance = this;
+        }
+
+        private void Start()
+        {
+            InitializeFromSave();
+        }
+
+        private void InitializeFromSave()
+        {
+            var saveData = PlaythroughLifecycleManager.Instance.CurrentData.inventory;
+            _itemsById.Clear();
+            _orderedIds.Clear();
+
+            foreach (var entry in saveData)
             {
-                _ownedItems.Add(data);
-                // Requirement 1: Immediately equip
-                EquipItem(data);
-                _currentIndex = _ownedItems.Count - 1;
+                _itemsById[entry.itemId] = entry;
+                _orderedIds.Add(entry.itemId);
+            }
+            Changed?.Invoke();
+        }
+
+        public bool TryAdd(ItemData data, int amount = 1)
+        {
+            var saveList = PlaythroughLifecycleManager.Instance.CurrentData.inventory;
+            string id = data.itemId;
+
+            int index = saveList.FindIndex(e => e.itemId == id);
+
+            if (index >= 0)
+            {
+                if (!data.isStackable) return false;
+                
+                var entry = saveList[index];
+                entry.count += amount;
+                saveList[index] = entry;
+            }
+            else
+            {
+                saveList.Add(new PlaythroughInventoryEntry { itemId = id, count = amount });
+                _orderedIds.Add(id);
+            }
+
+            // Refresh our lookup and notify UI
+            SyncInternalState();
+            ItemAdded?.Invoke(data);
+            Changed?.Invoke();
+            return true;
+        }
+
+        public bool TryRemove(string itemId, int amount = 1)
+        {
+            var saveList = PlaythroughLifecycleManager.Instance.CurrentData.inventory;
+            int index = saveList.FindIndex(e => e.itemId == itemId);
+            
+            if (index < 0) return false;
+
+            var entry = saveList[index];
+            if (entry.count < amount) return false;
+
+            entry.count -= amount;
+            if (entry.count <= 0)
+            {
+                saveList.RemoveAt(index);
+                _orderedIds.Remove(itemId);
+            }
+            else
+            {
+                saveList[index] = entry;
+            }
+
+            SyncInternalState();
+            Changed?.Invoke();
+            return true;
+        }
+
+        private void SyncInternalState()
+        {
+            _itemsById.Clear();
+            foreach (var entry in PlaythroughLifecycleManager.Instance.CurrentData.inventory)
+            {
+                _itemsById[entry.itemId] = entry;
             }
         }
 
-        public void EquipItem(ItemData data)
-        {
-            if (_spawnedHeldItem != null) Destroy(_spawnedHeldItem);
-            _currentHeldScript = null;
-
-            if (data == null || data.heldPrefab == null) return;
-
-            _spawnedHeldItem = Instantiate(data.heldPrefab, handPivot);
-            _spawnedHeldItem.transform.localPosition = Vector3.zero;
-            _spawnedHeldItem.transform.localRotation = Quaternion.identity;
-    
-            // Cache the ItemHeld component so we don't call GetComponent every frame
-            _currentHeldScript = _spawnedHeldItem.GetComponent<ItemHeld>();
-            _lastEquippedItem = data;
-        }
-
-        public void PassTriggerInput(bool pressed)
-        {
-            if (_currentHeldScript == null) return;
-            
-            if (pressed) _currentHeldScript.OnTriggerPressed();
-            else _currentHeldScript.OnTriggerReleased();
-        }
-
-        public void Holster()
-        {
-            if (_spawnedHeldItem != null) Destroy(_spawnedHeldItem);
-            _spawnedHeldItem = null;
-        }
-
-        public void ToggleHolsterLast()
-        {
-            if (_spawnedHeldItem != null) Holster();
-            else if (_lastEquippedItem != null) EquipItem(_lastEquippedItem);
-            else if (HasItems) EquipItem(_ownedItems[0]);
-        }
-
-        public void ChangeSelection(int direction)
-        {
-            if (!HasItems) return;
-            _currentIndex = (_currentIndex + direction + _ownedItems.Count) % _ownedItems.Count;
-        }
+        // Helpers for UI
+        public int GetCount(string itemId) => _itemsById.TryGetValue(itemId, out var entry) ? entry.count : 0;
         
-        public ItemData GetCurrentData() => HasItems ? _ownedItems[_currentIndex] : null;
+        public bool TryGetItemData(string itemId, out ItemData data)
+        {
+            data = itemRegistry.GetItem(itemId);
+            return data != null;
+        }
+
+        public int WrapIndex(int index)
+        {
+            int n = _orderedIds.Count;
+            if (n == 0) return 0;
+            int m = index % n;
+            return m < 0 ? m + n : m;
+        }
     }
 }

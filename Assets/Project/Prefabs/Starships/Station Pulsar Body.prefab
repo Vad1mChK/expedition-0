@@ -535,6 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440456326108777493}
   - component: {fileID: 5397026790808620132}
+  - component: {fileID: 1762199626473151909}
   m_Layer: 0
   m_Name: n_pulsar_antennadish
   m_TagString: Untagged
@@ -582,6 +583,27 @@ LODGroup:
     renderers:
     - renderer: {fileID: 3252757734453615200}
   m_Enabled: 1
+--- !u!135 &1762199626473151909
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898015740905795884}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 34
+  m_Center: {x: 0, y: 12, z: 0}
 --- !u!1 &2334560698006405659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1611,6 @@ GameObject:
   - component: {fileID: 809599905735997099}
   - component: {fileID: 1249335677574008280}
   - component: {fileID: 1938385903609875052}
-  - component: {fileID: 6154390922684351169}
   m_Layer: 0
   m_Name: n_pulsar_antenna_LOD0
   m_TagString: Untagged
@@ -1668,28 +1689,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6154390922684351169
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4633877993167797929}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8027947223382639020, guid: 217fc045d4ff86c42a3062d6c3c80fbe, type: 3}
 --- !u!1 &4670574492123491806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,7 +3523,6 @@ GameObject:
   - component: {fileID: 4303233333927871957}
   - component: {fileID: 1541849434058195647}
   - component: {fileID: 6652088121939986965}
-  - component: {fileID: 7826884703311387963}
   m_Layer: 0
   m_Name: n_pulsar_antennadish_LOD0
   m_TagString: Untagged
@@ -3603,28 +3601,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7826884703311387963
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7319436950016773283}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4317791289242333956, guid: 217fc045d4ff86c42a3062d6c3c80fbe, type: 3}
 --- !u!1 &7384996068774065265
 GameObject:
   m_ObjectHideFlags: 0

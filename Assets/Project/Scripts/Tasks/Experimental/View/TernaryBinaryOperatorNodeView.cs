@@ -29,7 +29,8 @@ namespace Expedition0.Tasks.Experimental
             {
                 leftInput = leftInputView.Model as TernaryLogicNode,
                 rightInput = rightInputView.Model as TernaryLogicNode,
-                op = initialOperator
+                op = initialOperator,
+                locked = locked
             };
 
             Model = Node;

@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9318169a97e54c62a0d65ed633933bb8, type: 3}
   m_Name: Blaster
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Items.Data.ItemData
-  itemName: Blaster
+  itemId: e0:weapon_blaster_pistol
+  itemName: "\u0411\u043B\u0430\u0441\u0442\u0435\u0440\u043D\u044B\u0439 \u043F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
   isStackable: 0
-  maxStack: 99
   isConsumable: 0
+  itemType: 2
   pickupPrefab: {fileID: 6818915762141378965, guid: 43f3bddd01784f141a200c46142b8b8e, type: 3}
   heldPrefab: {fileID: 6818915762141378965, guid: e09117c5ba316844f8470426c7d2820d, type: 3}
-  inventoryPrefab: {fileID: 0}
-  equipSound: {fileID: 0}
-  holsterSound: {fileID: 0}
+  inventoryPrefab: {fileID: 6818915762141378965, guid: ac4ca81adf67f514da22e7b4fcffd40f, type: 3}
+  equipSound: {fileID: 8300000, guid: 699a81fb920334b4790fecf38760039f, type: 3}
+  holsterSound: {fileID: 8300000, guid: 0c562be74442e72468f566be9abec92a, type: 3}

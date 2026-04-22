@@ -1,0 +1,17 @@
+{
+  "$schema": "./PlaythroughSaveData.schema.json",
+  "saveVersion": 20260414,
+  "inventory": [
+    {
+      "itemId": "e0:util_microphone",
+      "count": 1
+    }
+  ],
+  "completedLevels": [],
+  "respawnLevel": "e0:bridge_corridor",
+  "currentHealth": 100,
+  "deathCount": 0,
+  "enemyDefeatedCount": 0,
+  "taskSolvedCount": 0,
+  "taskMistakeCount": 0
+}

@@ -14,7 +14,8 @@ namespace Expedition0.Tasks.Experimental
         {
             Model = new NonaryValueNode
             {
-                currentValue = Mathf.Clamp(initialValue, 0, 8)
+                currentValue = Mathf.Clamp(initialValue, 0, 8),
+                locked = locked
             };
         }
     }

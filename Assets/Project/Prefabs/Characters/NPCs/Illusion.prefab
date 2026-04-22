@@ -3423,7 +3423,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7006158879960944979}
         m_TargetAssemblyTypeName: Expedition0.Environment.PrefabSummoner, Assembly-CSharp
-        m_MethodName: SummonEntryByIndex
+        m_MethodName: SummonDefaultEntryByIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3601,7 +3601,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7006158879960944979}
         m_TargetAssemblyTypeName: Expedition0.Environment.PrefabSummoner, Assembly-CSharp
-        m_MethodName: SummonEntryByIndex
+        m_MethodName: SummonDefaultEntryByIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

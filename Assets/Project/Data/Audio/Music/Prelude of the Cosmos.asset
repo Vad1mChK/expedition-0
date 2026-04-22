@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a835b03338452c989ed3318c4ffcaa, type: 3}
   m_Name: Prelude of the Cosmos
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Audio.MusicTrackAsset
-  intro: {fileID: 8300000, guid: d9af760cf2420484c8449d7099c1f43c, type: 3}
-  loop: {fileID: 8300000, guid: 7e4ed2e789e3f6945b06e1c815473cfd, type: 3}
+  intro: {fileID: 8300000, guid: fe3b89d792109384695b26a1fea1e448, type: 3}
+  loop: {fileID: 8300000, guid: 05c919a8c71dbb0459c519eff7b462e1, type: 3}
   volume: 1
   displayName: Prelude of the Cosmos
   developerDescription: Intro Cutscene

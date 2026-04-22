@@ -11,7 +11,6 @@ namespace Expedition0.Environment.Artifacts
         [SerializeField] private UnityEvent onSuccessfulOpenToggle;
         [SerializeField] private UnityEvent onUnlock;
         [SerializeField] private bool locked = true;
-        [SerializeField] private Artifact artifact;
 
         private int _openPropertyHash = -1;
 

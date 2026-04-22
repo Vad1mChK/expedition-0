@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Expedition0.Items.Data;
 using Expedition0.Items.Inventory;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Expedition0.Items.Core
@@ -10,9 +12,11 @@ namespace Expedition0.Items.Core
     public class ItemPickup : MonoBehaviour
     {
         [SerializeField] private ItemData data;
-        
         [SerializeField] private XRGrabInteractable _interactable;
         [SerializeField] private Outline _outline;
+        [Header("Events")]
+        [SerializeField] protected UnityEvent onAcquire;
+        [SerializeField] public UnityEvent onBeforeDestroy;
 
         private void Awake()
         {
@@ -27,15 +31,25 @@ namespace Expedition0.Items.Core
             _interactable.lastHoverExited.AddListener(_ => { if(_outline) _outline.enabled = false; });
         }
 
-        private void OnPickedUp(SelectEnterEventArgs args)
+        protected virtual void OnPickedUp(SelectEnterEventArgs args)
         {
-            // Find manager in scene (or use a Singleton/Service Locator)
-            var manager = FindFirstObjectByType<InventoryManager>();
-            if (manager)
-            {
-                manager.AddItem(data);
-                Destroy(gameObject);
-            }
+            onAcquire?.Invoke();
+            
+            var manager = InventoryManager.Instance != null
+                ? InventoryManager.Instance
+                : FindFirstObjectByType<InventoryManager>();
+
+            if (manager == null || data == null) return;
+
+            if (!manager.TryAdd(data))
+                return;
+
+            Destroy(gameObject);
+        }
+        
+        protected virtual void OnDestroy()
+        {
+            onBeforeDestroy?.Invoke();
         }
     }
 }

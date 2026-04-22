@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Expedition0.Save;
+using Expedition0.Save.Experimental;
 using Expedition0.Visuals;
 using UnityEngine;
 using UnityEngine.Events;
@@ -43,27 +44,30 @@ namespace Expedition0.Environment.Elevator
     [RequireComponent(typeof(Animator))]
     public class ElevatorController : MonoBehaviour
     {
-        [Header("Animator")]
+        [Header("Visuals")]
         [SerializeField] private Animator animator;
         [SerializeField] private string openPropertyName = "IsOpen";
         [SerializeField] private UnityEvent<bool> onSuccessfulDoorToggle;
-
-        [Header("Elevator State")]
-        [SerializeField] private ElevatorKind kind;
-        [SerializeField] private ElevatorLevel elevatorLevel;
-        [SerializeField] private string sceneToLoad;
-        [SerializeField] private List<ProgressBasedConditional<bool>> lockedConditions;
-        [SerializeField] private bool defaultLocked = false;
-        [SerializeField] private float delayUntilTransport = 2.5f;
-        [SerializeField] private GameProgress progressBeforeTransport;
         [SerializeField] private VisualEffectsController vfx;
-
+        
         [Header("Elevator Status Icon")]
         [SerializeField] private SpriteRenderer leftSpriteRenderer;
         [SerializeField] private SpriteRenderer rightSpriteRenderer;
         [SerializeField] private Material unlockedIconMaterial;
         [SerializeField] private Material lockedIconMaterial;
         [SerializeField] private List<ElevatorLevelIconEntry> icons;
+
+        [Header("Elevator State")]
+        [SerializeField] private ElevatorKind kind;
+        [SerializeField] private ElevatorLevel elevatorLevel;
+        [SerializeField] private ProgressBasedConditionalResolver<bool> lockedConditions;
+        
+        [Header("Transport")]
+        [SerializeField] private float delayUntilTransport = 2f;
+        [SerializeField] private bool autoTransport;
+        [SerializeField] private string levelIdToLoad;
+        [SerializeField] private UnityEvent onBeginTransport;
+        [SerializeField] private UnityEvent<string> onEndTransport;
 
         private int _openPropertyHash = -1;
         private bool _locked;
@@ -112,17 +116,7 @@ namespace Expedition0.Environment.Elevator
 
         public void ReevaluateLockState()
         {
-            bool locked = defaultLocked;
-            var progress = SaveManager.LoadProgress();
-
-            foreach (var cond in lockedConditions)
-            {
-                if (cond != null && cond.SatisfiedFor(progress))
-                {
-                    // Last matching condition wins
-                    locked = cond.outcome;
-                }
-            }
+            bool locked = lockedConditions.Resolve();
             
             Debug.Log($"Lock state of end-level elevator {gameObject.name} evaluated to {locked}");
 
@@ -167,7 +161,8 @@ namespace Expedition0.Environment.Elevator
                 return;
 
             _transportQueued = true;
-            EnsureObjectiveCompleted(progressBeforeTransport);
+            onBeginTransport?.Invoke();
+            
             CloseDoor();
             StartCoroutine(TransportAfterDelay());
         }
@@ -179,8 +174,9 @@ namespace Expedition0.Environment.Elevator
             if (vfx) // reference to VisualEffectsController
                 yield return StartCoroutine(Fade01(vfx, 0f, 1f, 1f));
             
-            if (!string.IsNullOrEmpty(sceneToLoad))
-                SceneManager.LoadScene(sceneToLoad);
+            onEndTransport?.Invoke(levelIdToLoad);
+            if (autoTransport && !string.IsNullOrEmpty(levelIdToLoad))
+                PlaythroughLifecycleManager.Instance?.LoadLevel(levelIdToLoad);
             
             // Wait one frame so XR rig is placed
             yield return null;
@@ -232,11 +228,6 @@ namespace Expedition0.Environment.Elevator
             var material = _locked ? lockedIconMaterial : unlockedIconMaterial;
             leftSpriteRenderer.material = material;
             rightSpriteRenderer.material = material;
-        }
-
-        private void EnsureObjectiveCompleted(GameProgress progress)
-        {
-            SaveManager.SetCompleted(progress);
         }
 
 #if UNITY_EDITOR

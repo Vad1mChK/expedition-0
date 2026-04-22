@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LogicTaskRoot",
+  "type": "object",
+  "properties": {
+    "rootId": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "nodes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/logicNode" }
+    }
+  },
+  "$defs": {
+    "logicNode": {
+      "type": "object",
+      "oneOf": [
+        { "$ref": "#/$defs/ternaryValueNode" },
+        { "$ref": "#/$defs/ternaryUnaryNode" },
+        { "$ref": "#/$defs/ternaryBinaryNode" },
+        { "$ref": "#/$defs/nonaryValueNode" },
+        { "$ref": "#/$defs/nonaryBinaryNode" }
+      ]
+    },
+    "baseLogicNode": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer", "minimum": 0 },
+        "locked": { "type": "boolean" }
+      }
+    },
+    "ternaryValueNode": {
+      "type": "object",
+      "allOf": [{
+        "$ref": "#/$defs/baseLogicNode"
+      }],
+      "properties": {
+        "type": { "const": "TritVal" },
+        "val": { "type": "integer", "minimum": 0, "maximum": 2 }
+      },
+      "required": [ "id", "type", "val" ]
+    },
+    "ternaryUnaryNode": {
+      "type": "object",
+      "allOf": [{
+        "$ref": "#/$defs/baseLogicNode"
+      }],
+      "properties": {
+        "type": { "const": "TritUn" },
+        "op": { "type": "string", "enum": [ "Identity", "Not" ] },
+        "inputId": { "type": "integer", "minimum": 0 }
+      },
+      "required": [ "id", "type", "op", "inputId" ]
+    },
+    "ternaryBinaryNode": {
+      "type": "object",
+      "allOf": [{
+        "$ref": "#/$defs/baseLogicNode"
+      }],
+      "properties": {
+        "type": { "const": "TritBin" },
+        "op": { "type": "string", "enum": [ "And", "Or", "Xor", "ImplKleene", "ImplLukasiewicz" ] },
+        "leftId": { "type": "integer", "minimum": 0 },
+        "rightId": { "type": "integer", "minimum": 0 }
+      },
+      "required": [ "id", "type", "op", "leftId", "rightId" ]
+    },
+    "nonaryValueNode": {
+      "type": "object",
+      "allOf": [{
+        "$ref": "#/$defs/baseLogicNode"
+      }],
+      "properties": {
+        "type": { "const": "NonVal" },
+        "val": { "type": "integer", "minimum": 0, "maximum": 8 }
+      },
+      "required": [ "id", "type", "val" ]
+    },
+    "nonaryBinaryNode": {
+      "type": "object",
+      "allOf": [{
+        "$ref": "#/$defs/baseLogicNode"
+      }],
+      "properties": {
+        "type": { "const": "NonBin" },
+        "op": { "type": "string", "enum": [ "NonaryPlus", "NonaryMinus", "NonaryConcat" ] },
+        "leftId": { "type": "integer", "minimum": 0 },
+        "rightId": { "type": "integer", "minimum": 0 }
+      },
+      "required": [ "id", "type", "op", "leftId", "rightId" ]
+    }
+  }
+}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Expedition0.Save;
+using Expedition0.Save.Experimental;
 using Expedition0.Visuals;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,23 +11,6 @@ namespace Expedition0.Health
 {
     public class PlayerHealth : MonoBehaviour, IDamageable
     {
-        [Serializable]
-        public struct ConditionalScene
-        {
-            public GameProgress progressConditions; // required flags
-            public int priority; // higher wins on ties
-            public string sceneName;
-
-            public bool IsSatisfied(GameProgress p)
-            {
-                return (p & progressConditions) == progressConditions;
-            }
-        }
-
-        [Header("Respawn Settings")] [SerializeField]
-        private List<ConditionalScene> respawnRules;
-        [SerializeField] private string defaultRespawnSceneName;
-        
         [Header("Health Settings")]
         [SerializeField] private float maxHealth = 100f;
 
@@ -127,18 +111,18 @@ namespace Expedition0.Health
 
         public void Respawn()
         {
-            // Scene Logic from System A
-            var respawnScene = GetRespawnScene();
-
+            var respawnLevelId = PlaythroughLifecycleManager.Instance.CurrentData.respawnLevel;
+            var respawnScene = PlaythroughLifecycleManager.Instance.levelRegistry.GetItem(respawnLevelId);
+            
             if (SceneManager.GetActiveScene().name != respawnScene)
-                SceneManager.LoadScene(respawnScene);
+            {
+                PlaythroughLifecycleManager.Instance.RespawnAndLoadRespawnLevel();
+            }
             else
+            {
+                PlaythroughLifecycleManager.Instance.ResetHealthAndIncrementDeath();
                 RespawnAtPosition(respawnPosition, respawnRotation);
-        }
-
-        private string GetRespawnScene()
-        {
-            return ResolveRespawnScene(SaveManager.LoadProgress());
+            }
         }
 
         public void RespawnAtPosition(Vector3 position, Quaternion rotation)
@@ -158,21 +142,6 @@ namespace Expedition0.Health
         {
             respawnPosition = position;
             respawnRotation = rotation;
-        }
-        
-        private string ResolveRespawnScene(GameProgress p)
-        {
-            var best = defaultRespawnSceneName;
-            var bestPr = int.MinValue;
-
-            foreach (var r in respawnRules)
-                if (!string.IsNullOrEmpty(r.sceneName) && r.IsSatisfied(p) && r.priority >= bestPr)
-                {
-                    best = r.sceneName;
-                    bestPr = r.priority;
-                }
-
-            return best;
         }
     }
 }

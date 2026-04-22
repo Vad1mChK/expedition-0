@@ -286,10 +286,11 @@ namespace Expedition0.CharacterAI
             currentState = AIState.Kissing;
             _agent.isStopped = true;
 
-            if (doUpdateSaveAfterKiss)
-            {
-                SaveManager.SetCompleted(GameProgress.SeenIllusion);
-            }
+            // if (doUpdateSaveAfterKiss)
+            // {
+            //     SaveManager.SetCompleted(GameProgress.SeenIllusion);
+            // }
+            // TODO Replace with achievement later
 
             onKiss?.Invoke();
 

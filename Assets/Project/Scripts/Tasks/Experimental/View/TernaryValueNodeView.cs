@@ -11,7 +11,8 @@ namespace Expedition0.Tasks.Experimental
         {
             Model = new TernaryValueNode
             {
-                currentValue = initialValue
+                currentValue = initialValue,
+                locked = locked
             };
         }
     }

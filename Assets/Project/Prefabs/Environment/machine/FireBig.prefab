@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 8251167721495338495}
   - component: {fileID: 3205641651940977234}
   - component: {fileID: 4549818834676574554}
+  - component: {fileID: 5138488807018729873}
   m_Layer: 9
   m_Name: FireBig
   m_TagString: Untagged
@@ -184,6 +185,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Environment.Fire.FireDamage
   areaDamagePerSecond: 10
   areaDamageDealInterval: 0.5
+--- !u!114 &5138488807018729873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3554816343974368742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3d22a10734ff59a110099a0a67056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Expedition0.Combat.Laser.LaserSurface
+  surfaceType: 3
+  bounceIntensity: 0.9
+  ior: 1.5
 --- !u!1 &4096850441701013849
 GameObject:
   m_ObjectHideFlags: 0

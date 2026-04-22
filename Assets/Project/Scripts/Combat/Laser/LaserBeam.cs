@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Expedition0.Health;
 using UnityEngine;
 using NaughtyAttributes;
+using Unity.VisualScripting;
 using UnityEngine.Serialization;
 
 namespace Expedition0.Combat.Laser
@@ -40,7 +41,7 @@ namespace Expedition0.Combat.Laser
         [SerializeField] private float beamWidth = 0.05f;
 
         [ColorUsage(true, true)] [SerializeField]
-        private Color beamColor = Color.yellow;
+        private Color beamColor = Color.red;
 
         [Header("Hit Effects")] [SerializeField]
         private GameObject hitEffectPrefab;
@@ -100,11 +101,13 @@ namespace Expedition0.Combat.Laser
             if (_visualsParent != null)
             {
                 Destroy(_visualsParent.gameObject);
+                _visualsParent = null;
             }
 
             if (_spawnedHitEffect != null)
             {
-                Destroy(_spawnedHitEffect);
+                Destroy(_spawnedHitEffect.gameObject);
+                _spawnedHitEffect = null;
             }
         }
 
