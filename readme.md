@@ -1,3 +1,8 @@
+> [!NOTE]
+> Актуальную версию игры можно найти [здесь](https://github.com/Vad1mChK/expedition-0-frontend).
+> Также доступна [серверная часть игры](https://github.com/Vad1mChK/expedition-0-backend).
+> Поддержка этого репозитория прекращена.
+
 # Expedition 0: Station Pulsar
 
 Игра для VR-платформ (в том числе Oculus Quest 2/3), обучающая основам **троичной логики**.
